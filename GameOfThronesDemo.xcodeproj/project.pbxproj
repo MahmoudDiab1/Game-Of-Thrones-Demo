@@ -16,6 +16,15 @@
 		0ACC2C8B28F7313B005065DE /* GameOfThronesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2C8A28F7313B005065DE /* GameOfThronesDemoTests.swift */; };
 		0ACC2C9528F7313B005065DE /* GameOfThronesDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2C9428F7313B005065DE /* GameOfThronesDemoUITests.swift */; };
 		0ACC2C9728F7313B005065DE /* GameOfThronesDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2C9628F7313B005065DE /* GameOfThronesDemoUITestsLaunchTests.swift */; };
+		0ACC2CB928F736C7005065DE /* HousesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CB028F736C7005065DE /* HousesModel.swift */; };
+		0ACC2CC728F745A9005065DE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CC628F745A9005065DE /* APIError.swift */; };
+		0ACC2CC928F745CA005065DE /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CC828F745CA005065DE /* NetworkEngine.swift */; };
+		0ACC2CCB28F745DF005065DE /* NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CCA28F745DF005065DE /* NetworkExtension.swift */; };
+		0ACC2CCD28F7460A005065DE /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CCC28F7460A005065DE /* SessionType.swift */; };
+		0ACC2CCF28F7464D005065DE /* SessionTypeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CCE28F7464D005065DE /* SessionTypeConfig.swift */; };
+		0ACC2CD328F7468F005065DE /* URLSessionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CD228F7468F005065DE /* URLSessionEngine.swift */; };
+		0ACC2CD928F747D6005065DE /* HousesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CD828F747D6005065DE /* HousesEndPoint.swift */; };
+		0ACC2CDB28F7480B005065DE /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CDA28F7480B005065DE /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		0ACC2C9028F7313B005065DE /* GameOfThronesDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACC2C9428F7313B005065DE /* GameOfThronesDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesDemoUITests.swift; sourceTree = "<group>"; };
 		0ACC2C9628F7313B005065DE /* GameOfThronesDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0ACC2CB028F736C7005065DE /* HousesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesModel.swift; sourceTree = "<group>"; };
+		0ACC2CC628F745A9005065DE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0ACC2CC828F745CA005065DE /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkEngine.swift; path = ../NetworkEngine.swift; sourceTree = "<group>"; };
+		0ACC2CCA28F745DF005065DE /* NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtension.swift; sourceTree = "<group>"; };
+		0ACC2CCC28F7460A005065DE /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
+		0ACC2CCE28F7464D005065DE /* SessionTypeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeConfig.swift; sourceTree = "<group>"; };
+		0ACC2CD228F7468F005065DE /* URLSessionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionEngine.swift; sourceTree = "<group>"; };
+		0ACC2CD828F747D6005065DE /* HousesEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesEndPoint.swift; sourceTree = "<group>"; };
+		0ACC2CDA28F7480B005065DE /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +120,7 @@
 				0ACC2C7328F7313A005065DE /* AppDelegate.swift */,
 				0ACC2C7528F7313A005065DE /* SceneDelegate.swift */,
 				0ACC2C7728F7313A005065DE /* ViewController.swift */,
+				0ACC2CA428F734BC005065DE /* NetworkLayer */,
 				0ACC2C7928F7313A005065DE /* Main.storyboard */,
 				0ACC2C7C28F7313B005065DE /* Assets.xcassets */,
 				0ACC2C7E28F7313B005065DE /* LaunchScreen.storyboard */,
@@ -125,6 +144,80 @@
 				0ACC2C9628F7313B005065DE /* GameOfThronesDemoUITestsLaunchTests.swift */,
 			);
 			path = GameOfThronesDemoUITests;
+			sourceTree = "<group>";
+		};
+		0ACC2CA428F734BC005065DE /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CBD28F744D9005065DE /* EndPoint */,
+				0ACC2CD128F74676005065DE /* NetworkEngine */,
+				0ACC2CD528F7474D005065DE /* APIError */,
+				0ACC2CAE28F736C7005065DE /* ResponseModels */,
+				0ACC2CD728F74782005065DE /* URLRequestLogger */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		0ACC2CAE28F736C7005065DE /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CB028F736C7005065DE /* HousesModel.swift */,
+			);
+			name = ResponseModels;
+			path = ../../../Desktop/NetworkeLayer/ResponseModels;
+			sourceTree = "<group>";
+		};
+		0ACC2CBD28F744D9005065DE /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CDA28F7480B005065DE /* EndPoint.swift */,
+				0ACC2CD828F747D6005065DE /* HousesEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		0ACC2CD028F7465B005065DE /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CCC28F7460A005065DE /* SessionType.swift */,
+				0ACC2CCE28F7464D005065DE /* SessionTypeConfig.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		0ACC2CD128F74676005065DE /* NetworkEngine */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CC828F745CA005065DE /* NetworkEngine.swift */,
+				0ACC2CD428F74703005065DE /* URLSessionEngin */,
+			);
+			name = NetworkEngine;
+			path = NetworkEngine/NetworkEngine;
+			sourceTree = "<group>";
+		};
+		0ACC2CD428F74703005065DE /* URLSessionEngin */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CD028F7465B005065DE /* Session */,
+				0ACC2CD228F7468F005065DE /* URLSessionEngine.swift */,
+			);
+			path = URLSessionEngin;
+			sourceTree = "<group>";
+		};
+		0ACC2CD528F7474D005065DE /* APIError */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CC628F745A9005065DE /* APIError.swift */,
+			);
+			path = APIError;
+			sourceTree = "<group>";
+		};
+		0ACC2CD728F74782005065DE /* URLRequestLogger */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC2CCA28F745DF005065DE /* NetworkExtension.swift */,
+			);
+			path = URLRequestLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +352,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ACC2C7828F7313A005065DE /* ViewController.swift in Sources */,
+				0ACC2CDB28F7480B005065DE /* EndPoint.swift in Sources */,
+				0ACC2CC928F745CA005065DE /* NetworkEngine.swift in Sources */,
+				0ACC2CCB28F745DF005065DE /* NetworkExtension.swift in Sources */,
 				0ACC2C7428F7313A005065DE /* AppDelegate.swift in Sources */,
+				0ACC2CB928F736C7005065DE /* HousesModel.swift in Sources */,
+				0ACC2CCF28F7464D005065DE /* SessionTypeConfig.swift in Sources */,
+				0ACC2CCD28F7460A005065DE /* SessionType.swift in Sources */,
 				0ACC2C7628F7313A005065DE /* SceneDelegate.swift in Sources */,
+				0ACC2CC728F745A9005065DE /* APIError.swift in Sources */,
+				0ACC2CD928F747D6005065DE /* HousesEndPoint.swift in Sources */,
+				0ACC2CD328F7468F005065DE /* URLSessionEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +547,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +576,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
