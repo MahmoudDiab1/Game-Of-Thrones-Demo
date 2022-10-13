@@ -19,6 +19,7 @@ enum SessionType {
         }
     }
 }
+
 protocol SessionTypeProtocol {
     var session: URLSession { get }
 }

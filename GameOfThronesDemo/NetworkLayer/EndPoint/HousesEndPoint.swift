@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-/**__________________________ Developer area _________________ */
 enum HousesEndPoint: Endpoint {
     case getHouses
 }

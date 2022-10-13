@@ -17,8 +17,8 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    var urlRequest :URLRequest? {
-        var request:URLRequest?
+    var urlRequest: URLRequest? {
+        var request: URLRequest?
         var components = URLComponents()
         components.scheme = self.scheme
         components.host = self.base

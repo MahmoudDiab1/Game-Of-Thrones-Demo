@@ -19,13 +19,14 @@ class URLSessionEngine: NetworkEngine {
     // fetchData without body
     func fetchData <ResponseType:Decodable>
     (request: URLRequest,  completion:@escaping(Result<ResponseType,APIError>)->()) {
-        request.log()
+      request.log()
+        
         let session = sessionInstance?.session
         
         /// Get session Instance
         let task = session?.dataTask(with: request) { data, response, error in
             
-            //data?.logResponse()
+            // data?.logResponse()
             if let error = error {
                 if (error  as NSError).code == -1009 {
                     completion (.failure(.offline))
