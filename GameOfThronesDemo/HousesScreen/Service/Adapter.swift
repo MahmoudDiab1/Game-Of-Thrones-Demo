@@ -9,6 +9,7 @@ import Foundation
 
 protocol HouseTarget {
     var name: String? { get }
+    var region: String? { get }
 }
 
 struct HouseAdapter: HouseTarget{
@@ -20,6 +21,10 @@ struct HouseAdapter: HouseTarget{
     
     var name: String?{
         return model?.name
+    }
+    
+    var region: String?{
+        return model?.region
     }
 }
 
