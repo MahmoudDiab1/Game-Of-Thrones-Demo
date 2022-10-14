@@ -21,26 +21,36 @@
                         <rect key="frame" x="36" y="16" width="384" height="134"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" highlighted="YES" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-6Y-PdI">
-                                <rect key="frame" x="18" y="16" width="348" height="102"/>
+                                <rect key="frame" x="18" y="44" width="348" height="74"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <color key="NSColor" red="0.49411764705882355" green="0.54509803921568623" blue="0.59607843137254901" alpha="0.88829677152317876" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.49411764705882355" green="0.54509803921568623" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="GameofThrones"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" highlighted="YES" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-NQ-NrH">
+                                <rect key="frame" x="16" y="16" width="352" height="12"/>
+                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="12"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.35686274509803922" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0071215986394557824" green="0.019607843137254902" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="T2E-6Y-PdI" firstAttribute="leading" secondItem="spB-mG-dCP" secondAttribute="leading" constant="18" id="J5w-MX-8Oa"/>
+                            <constraint firstItem="T2E-6Y-PdI" firstAttribute="top" secondItem="5Zp-NQ-NrH" secondAttribute="bottom" constant="16" id="Ohi-9m-LwR"/>
+                            <constraint firstAttribute="trailing" secondItem="5Zp-NQ-NrH" secondAttribute="trailing" constant="16" id="WSQ-WF-MMO"/>
                             <constraint firstAttribute="bottom" secondItem="T2E-6Y-PdI" secondAttribute="bottom" constant="16" id="XGA-5U-HJs"/>
                             <constraint firstAttribute="trailing" secondItem="T2E-6Y-PdI" secondAttribute="trailing" constant="18" id="ayJ-U6-8oz"/>
-                            <constraint firstItem="T2E-6Y-PdI" firstAttribute="top" secondItem="spB-mG-dCP" secondAttribute="top" constant="16" id="qCw-CV-9Yc"/>
+                            <constraint firstItem="5Zp-NQ-NrH" firstAttribute="top" secondItem="spB-mG-dCP" secondAttribute="top" constant="16" id="gNN-aF-ZKE"/>
+                            <constraint firstItem="5Zp-NQ-NrH" firstAttribute="leading" secondItem="spB-mG-dCP" secondAttribute="leading" constant="16" id="lwD-vY-saJ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -55,7 +65,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="spB-mG-dCP" id="iiF-0k-gO0"/>
-                <outlet property="name" destination="T2E-6Y-PdI" id="Fkx-8x-ka5"/>
+                <outlet property="nameLabel" destination="T2E-6Y-PdI" id="Fkx-8x-ka5"/>
+                <outlet property="regionLabel" destination="5Zp-NQ-NrH" id="5Xg-0j-E9U"/>
             </connections>
             <point key="canvasLocation" x="230.43478260869566" y="116.51785714285714"/>
         </tableViewCell>

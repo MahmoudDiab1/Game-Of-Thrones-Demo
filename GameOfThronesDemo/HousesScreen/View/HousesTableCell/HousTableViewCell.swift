@@ -8,8 +8,9 @@
 import UIKit
 
 class HousTableViewCell: UITableViewCell {
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,8 @@ class HousTableViewCell: UITableViewCell {
     }
     
      func configureCell(cellModel: HouseTarget){
-         name.text = cellModel.name 
+         nameLabel.text = cellModel.name
+         regionLabel.text = cellModel.region
     }
     
     
