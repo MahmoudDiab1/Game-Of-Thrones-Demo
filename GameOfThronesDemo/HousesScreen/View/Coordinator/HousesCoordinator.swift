@@ -25,9 +25,7 @@ class HouseCoordinator: Coordinator {
 }
 
 extension HouseCoordinator: HousesViewControllerRouter {
-    
-    // Navigate to next page
-    func navigateToDetailsPage() {
+    func navigateToDetailsPage(_ housModel: HouseTarget) {
         let detailsCoordinator = DetailsCoordinator(navigationController: navigationController)
         detailsCoordinator.delegate = self
         childCoordinators.append(detailsCoordinator)

@@ -19,7 +19,7 @@ enum HousesRemoteType {
 }
 
 protocol HousesRemote {
-    func getHouses(endPoint: HousesEndPoint, completion: @escaping HousesRemoteResult)
+    func getHouses(endPoint: Endpoint, completion: @escaping HousesRemoteResult)
 }
 
 struct HousesRemoteURLSession: HousesRemote  {
@@ -29,7 +29,7 @@ struct HousesRemoteURLSession: HousesRemote  {
         self.networkEngine = networkEngine
     }
     
-    func getHouses(endPoint: HousesEndPoint, completion: @escaping HousesRemoteResult ){
+    func getHouses(endPoint: Endpoint, completion: @escaping HousesRemoteResult ){
         guard let request = endPoint.urlRequest else {return}
          
         networkEngine.fetchData(request: request) { (result:Result<HousesResponseModel, APIError>)  in

@@ -6,23 +6,30 @@
 //
 
 import UIKit 
+import CoreMedia
 
-public protocol HousesViewControllerRouter: class {
-    func navigateToDetailsPage()
+protocol HousesViewControllerRouter: class {
+    func navigateToDetailsPage(_ housModel: HouseTarget)
 }
+
 protocol HousesViewProtocol {
     func updateHousesUI(_ items: [HouseTarget])
     func showError(error: AlertErrorModel)
 }
 
-class HousesViewController: UIViewController, HousesViewProtocol {
+class HousesViewController: UIViewController, HousesViewProtocol{
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var housesTableView: UITableView!
+    
+    private var items: [HouseTarget]?
     
     lazy var presenter: HousesPresenterProtocol = {
         return HousesPresenter(self, .remote(.urlSessionProvider))
     }()
+    
     private weak var router: HousesViewControllerRouter?
     
-    init(router: HousesViewControllerRouter ) {
+    init(router: HousesViewControllerRouter) {
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,15 +41,55 @@ class HousesViewController: UIViewController, HousesViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.screenLoaded()
-        self.router?.navigateToDetailsPage()
+        setupView()
+    }
+    
+    private func setupView(){
+        housesTableView.delegate = self
+        housesTableView.dataSource = self
+        housesTableView.register(UINib(nibName: "HousTableViewCell", bundle: nil), forCellReuseIdentifier: "HousTableViewCell")
     }
     
     func updateHousesUI(_ items: [HouseTarget]) {
-        let items = items.map{print($0.name)}
+        self.items = items
+        housesTableView.reloadData()
     }
     
     func showError(error: AlertErrorModel) {
-        print(error.message)
+        showAlert(error)
     }
     
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+       let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+       if (actualPosition.y > 0){
+           UIView.animate(withDuration: 4){
+               self.backgroundImageView.alpha = 0.5
+           }
+       }else{
+           UIView.animate(withDuration: 4) {
+               self.backgroundImageView.alpha = 1
+           }
+       }
+   }
+    
+}
+extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        items?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "HousTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HousTableViewCell,
+              let items = items else{ return UITableViewCell() }
+        cell.configureCell(cellModel: items[indexPath.row])
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let items = items else{ return }
+        router?.navigateToDetailsPage(items[indexPath.row])
+    }
 }

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialise the first coordinator with the main navigation controller
         houseCoordinator = HouseCoordinator(navigationController: window?.rootViewController as! UINavigationController)
-        
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "game_of_thrones")
         // The start method will actually display the main view
         houseCoordinator?.start()
         

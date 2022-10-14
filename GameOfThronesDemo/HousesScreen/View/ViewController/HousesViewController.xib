@@ -4,12 +4,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HousesViewController" customModule="GameOfThronesDemo" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="fyE-lk-Kx5" id="Hu8-yh-7G5"/>
+                <outlet property="housesTableView" destination="eTk-YY-gFL" id="1R2-SK-sbJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +19,32 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-lk-Kx5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-YY-gFL">
+                    <rect key="frame" x="0.0" y="305.5" width="414" height="556.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.044624379140000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="WIY-oj-xOV"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eTk-YY-gFL" firstAttribute="trailing" secondItem="WIY-oj-xOV" secondAttribute="trailing" id="4UB-z9-F2o"/>
+                <constraint firstItem="fyE-lk-Kx5" firstAttribute="leading" secondItem="WIY-oj-xOV" secondAttribute="leading" id="6Rh-xU-CRp"/>
+                <constraint firstItem="fyE-lk-Kx5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Zy-3J-t3R"/>
+                <constraint firstItem="eTk-YY-gFL" firstAttribute="top" secondItem="fyE-lk-Kx5" secondAttribute="bottom" constant="10" id="Mj3-ra-35N"/>
+                <constraint firstItem="WIY-oj-xOV" firstAttribute="bottom" secondItem="eTk-YY-gFL" secondAttribute="bottom" id="OyT-KM-Bca"/>
+                <constraint firstItem="fyE-lk-Kx5" firstAttribute="trailing" secondItem="WIY-oj-xOV" secondAttribute="trailing" id="Z1Z-hP-I0w"/>
+                <constraint firstItem="fyE-lk-Kx5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.33" id="Z3j-qR-bov"/>
+                <constraint firstItem="eTk-YY-gFL" firstAttribute="leading" secondItem="WIY-oj-xOV" secondAttribute="leading" id="xMF-Ef-4Ct"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="132" y="63"/>
+            <point key="canvasLocation" x="131.8840579710145" y="62.946428571428569"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="Background" width="640" height="360"/>
     </resources>
 </document>

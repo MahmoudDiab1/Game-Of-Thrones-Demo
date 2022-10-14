@@ -12,42 +12,49 @@ enum HousesEndPoint: Endpoint {
 }
 
 extension HousesEndPoint {
-    var baseUrl: String{
-        switch self {
-        case .getHouses:
-            return "anapioficeandfire.com"
-        }
+    private var baseUrl: String{
+        return "anapioficeandfire.com"
     }
     
-    var method: String {
-        switch self {
-        case .getHouses:
-            return "GET"
-        }
+    private var method: String {
+        return "GET"
     }
     
-    var scheme:String  {
-        switch self  {
-        default:
-            return "https"
-        }
+    private var scheme: String {
+        return "https"
     }
     
-    var base: String {
-        switch self {
-        default:
-            return baseUrl
-        }
+    private var base: String {
+        return baseUrl
     }
     
-    var path : String {
-        switch self {
-        case .getHouses:
-            return "/api/houses/"
-        }
+    private var path : String {
+        return "/api/houses/"
     }
     
-    var parameter: [URLQueryItem]? {
+    private var parameter: [URLQueryItem]? {
         return nil
+    } 
+    
+    private func buildUrlRequest() -> URLRequest? {
+        var request: URLRequest?
+        var components = URLComponents()
+        components.scheme = self.scheme
+        components.host = self.base
+        components.path = self.path
+        components.queryItems = self.parameter
+        if let url = components.url {
+            request = URLRequest(url: url)
+            request?.httpMethod = self.method
+        }
+        return request
+    }
+    
+    
+    var urlRequest: URLRequest? {
+        switch self {
+        case .getHouses:
+            return buildUrlRequest()
+        } 
     }
 }

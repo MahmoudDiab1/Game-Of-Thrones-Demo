@@ -10,7 +10,8 @@ import UIKit
 
 
 
-class DetailsCoordinator: Coordinator{
+class DetailsCoordinator: Coordinator{ 
+    
      
     var childCoordinators: [Coordinator] = []
     

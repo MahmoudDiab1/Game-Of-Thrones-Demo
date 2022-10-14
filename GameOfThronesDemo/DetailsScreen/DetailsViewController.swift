@@ -23,7 +23,7 @@ class DetailsViewController: UIViewController {
     
     private weak var router: DetailsRouter?
     
-    init(router: DetailsRouter ) {
+    init(router: DetailsRouter) {
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }

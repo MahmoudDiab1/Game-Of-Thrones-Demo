@@ -22,7 +22,7 @@ struct HousesRemoteStore: HousesInteractor {
     }
     
     func getHouses(completion: @escaping HousesViewResult) {
-        remote?.getHouses(endPoint: .getHouses) { result in
+        remote?.getHouses(endPoint: HousesEndPoint.getHouses) { result in
             switch result {
             case .success(let houses):
                 let items = adapt(houses)
