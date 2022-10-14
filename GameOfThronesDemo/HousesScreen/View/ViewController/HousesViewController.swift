@@ -62,11 +62,11 @@ class HousesViewController: UIViewController, HousesViewProtocol{
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
        if (actualPosition.y > 0){
-           UIView.animate(withDuration: 4){
-               self.backgroundImageView.alpha = 0.5
+           UIView.animate(withDuration: 1){
+               self.backgroundImageView.alpha = 0.4
            }
        }else{
-           UIView.animate(withDuration: 4) {
+           UIView.animate(withDuration: 1) {
                self.backgroundImageView.alpha = 1
            }
        }
