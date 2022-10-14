@@ -30,9 +30,11 @@ class HousTableViewCell: UITableViewCell {
     
     private func styleCell() {
         containerView.layer.cornerRadius = 12
-//        containerView.layer.borderColor = UIColor.orange.cgColor
-//        containerView.layer.borderWidth = 0.1
-        containerView.layer.shadowColor = UIColor.lightGray.cgColor
+        
+         
+        containerView.layer.borderColor = UIColor.orange.cgColor
+        containerView.layer.borderWidth = 0.08
+        containerView.layer.shadowColor = UIColor.darkGray.cgColor
         containerView.layer.shadowRadius = 8
         containerView.layer.shadowOpacity = 1.0
         containerView.layer.shadowOffset = CGSize(width: 2, height: 2)
