@@ -48,6 +48,10 @@ class HousesViewController: UIViewController, HousesViewProtocol{
         housesTableView.delegate = self
         housesTableView.dataSource = self
         housesTableView.register(UINib(nibName: "HousTableViewCell", bundle: nil), forCellReuseIdentifier: "HousTableViewCell")
+        backgroundImageView.alpha = 0.1
+        UIView.animate(withDuration: 4){
+            self.backgroundImageView.alpha = 0.5
+        }
     }
     
     func updateHousesUI(_ items: [HouseTarget]) {
@@ -60,18 +64,17 @@ class HousesViewController: UIViewController, HousesViewProtocol{
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-       let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-       if (actualPosition.y > 0){
-           UIView.animate(withDuration: 1){
-               self.backgroundImageView.alpha = 0.4
-           }
-       }else{
-           UIView.animate(withDuration: 1) {
-               self.backgroundImageView.alpha = 1
-           }
-       }
-   }
-    
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        if (actualPosition.y > 0){
+            UIView.animate(withDuration: 1){
+                self.backgroundImageView.alpha = 0.5
+            }
+        }else{
+            UIView.animate(withDuration: 1) {
+                self.backgroundImageView.alpha = 1
+            }
+        }
+    }
 }
 extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -85,11 +88,20 @@ extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
               let items = items else{ return UITableViewCell() }
         cell.configureCell(cellModel: items[indexPath.row])
         cell.selectionStyle = .none
+        cell.contentView.alpha = 0
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let items = items else{ return }
         router?.navigateToDetailsPage(items[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let delay = 0.01 * Double(indexPath.row)
+        let duration =  1.0
+        UIView.animate(withDuration: duration, delay: delay) {
+            cell.contentView.alpha = 1
+        }
     }
 }
