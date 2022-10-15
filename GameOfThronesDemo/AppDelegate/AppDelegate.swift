@@ -7,31 +7,21 @@
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
- 
+    
+    //MARK: Variables -
     var window: UIWindow?
-    // Make the first coordinator with a strong reference
-    var houseCoordinator : HouseCoordinator?
-
+    var coordinator: AppCoordinator?
+    
+    //MARK: App lifeCycle -
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController()
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "game_of_thrones") 
+        window = UIWindow()
+        coordinator = AppCoordinator(window: window!)
+        coordinator?.start()
         
-        // Initialise the first coordinator with the main navigation controller
-        houseCoordinator = HouseCoordinator(navigationController: window?.rootViewController as! UINavigationController)
-        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "game_of_thrones")
-        // The start method will actually display the main view
-        houseCoordinator?.start()
-        
-        window?.makeKeyAndVisible()
         return true
     }
- 
- 
-
-
 }
 

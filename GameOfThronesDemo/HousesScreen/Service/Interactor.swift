@@ -7,10 +7,10 @@
 
 import Foundation
 
-typealias HousesViewResult = (Result<[HouseTarget], GetHousesError>) -> ()
+typealias HousesViewResult = (Result<[HouseTarget], DefaultErrorModel>) -> ()
 
 protocol HousesInteractor{
-    func getHouses(completion:@escaping HousesViewResult)
+    func getHouses(page: Int,completion: @escaping HousesViewResult)
 }
 
 struct HousesRemoteStore: HousesInteractor {
@@ -21,8 +21,8 @@ struct HousesRemoteStore: HousesInteractor {
         self.remote = provider.remoteEngine
     }
     
-    func getHouses(completion: @escaping HousesViewResult) {
-        remote?.getHouses(endPoint: HousesEndPoint.getHouses) { result in
+    func getHouses(page: Int,completion: @escaping HousesViewResult) {
+        remote?.getHouses(endPoint: HousesEndPoint.getHouses(page)) { result in
             switch result {
             case .success(let houses):
                 let items = adapt(houses)

@@ -7,13 +7,13 @@
 
 import Foundation 
 
-enum HousesRemoteError: Error {
+enum RemoteError: Error {
     case offline
     case invalidData
     case serverError
 }
 
-struct HouseModel: Codable {
+struct HouseModel: Decodable {
     let url: String?
     let name, region, coatOfArms, words: String?
     let titles, seats: [String]?
@@ -25,4 +25,4 @@ struct HouseModel: Codable {
 }
 
 typealias HousesResponseModel = [HouseModel]
-typealias HousesRemoteResult = (Result<HousesResponseModel, HousesRemoteError>) -> ()
+typealias HousesRemoteResult = (Result<HousesResponseModel, RemoteError>) -> ()

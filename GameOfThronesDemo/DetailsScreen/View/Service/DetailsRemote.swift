@@ -1,38 +1,38 @@
 //
-//  HousesRemoteService.swift
-//  GameOfThronesDemo
+//  Remote.swift
+//  GOT
 //
-//  Created by Mahmoud Diab on 12/10/2022.
+//  Created by Mahmoud Diab on 15/10/2022.
 //
 
 import Foundation
 
-enum HousesRemoteType {
+enum HouseDetailsRemoteType {
     case urlSessionProvider
     
-    var remoteEngine: HousesRemote {
+    var remoteEngine: HouseDetailsRemote {
         switch self {
         case .urlSessionProvider:
-            return HousesRemoteURLSession(URLSessionEngine(sessionType: .urlSession(config: .defaultConfig)))
+            return HouseDetailsRemoteURLSession(URLSessionEngine(sessionType: .urlSession(config: .defaultConfig)))
         }
     }
 }
 
-protocol HousesRemote {
-    func getHouses(endPoint: Endpoint, completion: @escaping HousesRemoteResult)
+protocol HouseDetailsRemote {
+    func getCharacter(endPoint: Endpoint, completion: @escaping CharacterRemoteResult)
 }
 
-struct HousesRemoteURLSession: HousesRemote  {
+struct HouseDetailsRemoteURLSession: HouseDetailsRemote  {
     private let networkEngine: NetworkEngine
     
     init(_ networkEngine: NetworkEngine) {
         self.networkEngine = networkEngine
     }
     
-    func getHouses(endPoint: Endpoint, completion: @escaping HousesRemoteResult ){
+    func getCharacter(endPoint: Endpoint, completion: @escaping CharacterRemoteResult ){
         guard let request = endPoint.urlRequest else {return}
          
-        networkEngine.fetchData(request: request) { (result:Result<HousesResponseModel, APIError>)  in
+        networkEngine.fetchData(request: request) { (result:Result<CharacterResponseModel, APIError>)  in
             switch result {
             case .success(let result):
                 completion(.success(result))

@@ -12,7 +12,7 @@ struct AlertErrorModel {
     let message:String?
 }
 
-enum GetHousesError:Error {
+enum DefaultErrorModel:Error {
     case offline
     case serverError
     var asAlertModel: AlertErrorModel {
