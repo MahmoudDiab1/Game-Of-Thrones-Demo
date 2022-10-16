@@ -10,7 +10,7 @@ import Foundation
 typealias CharacterViewResult = (Result<CharacterTarget, DefaultErrorModel>) -> ()
 
 protocol HouseDetailsInteractor{
-    func getCharacter(url: String, completion: @escaping CharacterViewResult)
+    func getCharacter(url: URL, completion: @escaping CharacterViewResult)
 }
 
 struct HouseDetailsRemoteStore: HouseDetailsInteractor {
@@ -22,7 +22,7 @@ struct HouseDetailsRemoteStore: HouseDetailsInteractor {
         self.remote = provider.remoteEngine
     }
     
-    func getCharacter(url: String, completion: @escaping CharacterViewResult) {
+    func getCharacter(url: URL, completion: @escaping CharacterViewResult) {
         remote?.getCharacter(endPoint: HouseDetailsEndPoint.getCharacter(url: url)){ result in
             switch result {
             case .success(let character):

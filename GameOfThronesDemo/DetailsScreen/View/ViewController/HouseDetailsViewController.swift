@@ -7,37 +7,29 @@
 
 import UIKit 
 
+// MARK: View -
 protocol HousesDetailsViewProtocol{
-    func buildswornMembersView(model: AncestralWeapons)
-    func setupHeader(model: HouseDetailesCardModel)
+    func displayLordCard(_ cardPresenter: HouseDetailsCardPresenterProtocol)
+    func displayHouseNameCard(_ cardPresenter: HouseNamePresenterProtocol)
+    func displayListCard(_ cardPresenter: DetailsViewWithListPresenterProtocol)
 }
-class HouseDetailsViewController: UIViewController, HousesDetailsViewProtocol{ 
+
+class HouseDetailsViewController: UIViewController{
+    
+    // MARK: Outlets -
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var firstBtn: UIView!
     @IBOutlet weak var detailsView: UIView!
+    @IBOutlet weak var rightButtonView: UIView!
+    @IBOutlet weak var leftButtonView: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.styleNav()
-        presenter?.screenLoaded()
-        presenter?.setupView(view: self)
-        
-    }
     
-    func buildswornMembersView(model: AncestralWeapons) {
-        let swornMembersView = DetailesWithListCustomView(frame: detailsView.frame, model: model)
-        swornMembersView.center = detailsView.center
-        view.addSubview(swornMembersView)
-    }
-    
-    func setupHeader(model: HouseDetailesCardModel) {
-        let houseDetailesCard = HouseDetailesCard(frame: headerView.frame, model: model)
-        houseDetailesCard.center = headerView.center
-            view.addSubview(houseDetailesCard)
-    }
-    private var presenter: HousDetailsPresenterProtocol?
+    // MARK: Properties -
+    private var presenter: HouseDetailsPresenterProtocol?
     private var coordinator: HousesFlow?
-    init(presenter: HousDetailsPresenterProtocol, coordinator: HousDetailsFlow) {
+    
+    
+    // MARK: Initializers -
+    init(presenter: HouseDetailsPresenterProtocol, coordinator: HousDetailsFlow) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,7 +37,68 @@ class HouseDetailsViewController: UIViewController, HousesDetailsViewProtocol{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
+    
+    // MARK: LifeCycle -
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter?.attach(view: self)
+        presenter?.viewLoaded()
+        setupViews()
+    }
+    
+    
+    // MARK: Functions -
+    private func addSubView(subView: UIView, parent: UIView){
+        self.detailsView.subviews.forEach({ $0.removeFromSuperview() })
+        subView.center = parent.center
+        parent.addSubview(subView)
+        subView.stickByconstraints(to: parent)
+    }
+    
+    private func setupViews(){
+        navigationController?.styleNav()
+        leftButtonView.addAclerycStyle()
+        rightButtonView.addAclerycStyle()
+        leftButtonView.layer.borderWidth = 0
+        rightButtonView.layer.borderColor = UIColor.orange.cgColor
+        rightButtonView.layer.borderWidth = 1
+    }
+    
+    
+    // MARK: Actions -
+    @IBAction func rightButtonPressed(_ sender: Any) {
+        leftButtonView.layer.borderWidth = 0
+        rightButtonView.layer.borderColor = UIColor.orange.cgColor
+        rightButtonView.layer.borderWidth = 1
+        presenter?.weaponsBtnPressed()
+    }
+    
+    @IBAction func leftButtonPressed(_ sender: Any) {
+        
+        rightButtonView.layer.borderWidth = 0
+        leftButtonView.layer.borderColor = UIColor.orange.cgColor
+        leftButtonView.layer.borderWidth = 1
+        presenter?.lordBtnPressed()
+    }
+}
 
+
+// MARK: Extensions -
+extension HouseDetailsViewController: HousesDetailsViewProtocol{
+    
+    func displayLordCard(_ cardPresenter: HouseDetailsCardPresenterProtocol) {
+        let lordCard = HouseDetailesCard(frame: detailsView.frame, cardPresenter)
+        addSubView(subView: lordCard, parent: detailsView)
+    }
+    
+    func displayHouseNameCard(_ cardPresenter: HouseNamePresenterProtocol) {
+        let houseNameView = HouseNameView(frame: headerView.frame, cardPresenter)
+        addSubView(subView: houseNameView, parent: headerView)
+    }
+    
+    func displayListCard(_ cardPresenter: DetailsViewWithListPresenterProtocol) {
+        let weaponsCard = DetailesWithListCustomView(frame: detailsView.frame, presenter: cardPresenter)
+        addSubView(subView: weaponsCard, parent: detailsView)
+    }
 }
