@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Game of Thrones.ttf">
+            <string>GameofThrones</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HouseDetailesCard" customModule="GOT" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="1et-qd-9UY" id="ETS-Vp-1H3"/>
+                <outlet property="culturView" destination="hY5-sl-4yg" id="K2H-VQ-Jbv"/>
+                <outlet property="culture" destination="QWp-Zi-7h9" id="g4X-FF-Roa"/>
+                <outlet property="gender" destination="FKr-Q2-zRX" id="nUS-1g-4rB"/>
+                <outlet property="genderView" destination="JwM-Va-92g" id="Oe8-WA-Spm"/>
+                <outlet property="houseName" destination="Vyd-a7-g7H" id="p1n-Wt-c9x"/>
+                <outlet property="nickName" destination="hNr-XF-RBU" id="SnG-uV-csY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1et-qd-9UY">
+            <rect key="frame" x="0.0" y="0.0" width="562" height="330"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-mR-S83">
+                    <rect key="frame" x="28" y="274" width="506" height="40"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwM-Va-92g">
+                            <rect key="frame" x="0.0" y="0.0" width="241" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="male" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-Q2-zRX">
+                                    <rect key="frame" x="42" y="8" width="191" height="24"/>
+                                    <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="8"/>
+                                    <color key="textColor" red="0.84258078231292521" green="0.83577806122448983" blue="0.82953337585034015" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.righthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iSK-qC-ymQ">
+                                    <rect key="frame" x="12" y="10" width="22" height="19.5"/>
+                                    <color key="tintColor" red="0.56430073784693879" green="0.33446850786054416" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="czp-TL-Dd4"/>
+                                        <constraint firstAttribute="width" constant="22" id="q8d-XI-tY6"/>
+                                    </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="iSK-qC-ymQ" firstAttribute="centerY" secondItem="FKr-Q2-zRX" secondAttribute="centerY" id="7Up-ea-eYQ"/>
+                                <constraint firstAttribute="bottom" secondItem="FKr-Q2-zRX" secondAttribute="bottom" constant="8" id="D63-vq-2Yh"/>
+                                <constraint firstAttribute="trailing" secondItem="FKr-Q2-zRX" secondAttribute="trailing" constant="8" id="Fr6-Jh-JFg"/>
+                                <constraint firstItem="iSK-qC-ymQ" firstAttribute="leading" secondItem="JwM-Va-92g" secondAttribute="leading" constant="12" id="V3b-cP-7sj"/>
+                                <constraint firstItem="FKr-Q2-zRX" firstAttribute="top" secondItem="JwM-Va-92g" secondAttribute="top" constant="8" id="Zjn-s5-C1H"/>
+                                <constraint firstItem="FKr-Q2-zRX" firstAttribute="leading" secondItem="iSK-qC-ymQ" secondAttribute="trailing" constant="8" id="axY-Af-bzq"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hY5-sl-4yg">
+                            <rect key="frame" x="265" y="0.0" width="241" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="culture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-Zi-7h9">
+                                    <rect key="frame" x="46" y="8" width="187" height="24"/>
+                                    <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="8"/>
+                                    <color key="textColor" red="0.8425807823" green="0.83577806119999998" blue="0.82953337589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="z5V-qT-Vq4">
+                                    <rect key="frame" x="12" y="6.5" width="26" height="26.5"/>
+                                    <color key="tintColor" red="0.56430073780000001" green="0.33446850789999999" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="26" id="Eqn-uS-a1G"/>
+                                        <constraint firstAttribute="height" constant="32" id="kei-vK-eWy"/>
+                                    </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="z5V-qT-Vq4" firstAttribute="centerY" secondItem="QWp-Zi-7h9" secondAttribute="centerY" id="XaA-Ye-Iqz"/>
+                                <constraint firstItem="z5V-qT-Vq4" firstAttribute="leading" secondItem="hY5-sl-4yg" secondAttribute="leading" constant="12" id="ai3-Qp-Suy"/>
+                                <constraint firstItem="QWp-Zi-7h9" firstAttribute="top" secondItem="hY5-sl-4yg" secondAttribute="top" constant="8" id="dmx-uu-vSP"/>
+                                <constraint firstItem="QWp-Zi-7h9" firstAttribute="leading" secondItem="z5V-qT-Vq4" secondAttribute="trailing" constant="8" id="gSi-fE-F4T"/>
+                                <constraint firstAttribute="trailing" secondItem="QWp-Zi-7h9" secondAttribute="trailing" constant="8" id="iLX-uK-pwo"/>
+                                <constraint firstAttribute="bottom" secondItem="QWp-Zi-7h9" secondAttribute="bottom" constant="8" id="rJr-AS-miP"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CZz-WW-tnu"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="elLabel Label Label Label LabelLabel Label Label Label LabelLabel Label Label Label LabelLabel Labe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-XF-RBU">
+                    <rect key="frame" x="16" y="82.5" width="530" height="175.5"/>
+                    <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="20"/>
+                    <color key="textColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-xA-0yZ">
+                    <rect key="frame" x="20" y="16" width="42" height="38.5"/>
+                    <color key="tintColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2nB-1q-Op3"/>
+                        <constraint firstAttribute="width" constant="42" id="ZEC-Qj-A2O"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="755" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyd-a7-g7H">
+                    <rect key="frame" x="20" y="56" width="522" height="18.5"/>
+                    <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
+                    <color key="textColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Z0F-Sl-HVI"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hNr-XF-RBU" firstAttribute="top" secondItem="Vyd-a7-g7H" secondAttribute="bottom" constant="8" symbolic="YES" id="7C9-5F-EtL"/>
+                <constraint firstItem="Rmq-mR-S83" firstAttribute="top" secondItem="hNr-XF-RBU" secondAttribute="bottom" constant="16" id="Dah-Pw-1I1"/>
+                <constraint firstItem="Rmq-mR-S83" firstAttribute="width" secondItem="1et-qd-9UY" secondAttribute="width" multiplier="0.9" id="EKf-T4-u3g"/>
+                <constraint firstAttribute="trailing" secondItem="hNr-XF-RBU" secondAttribute="trailing" constant="16" id="IEJ-RE-Scb"/>
+                <constraint firstItem="Z0F-Sl-HVI" firstAttribute="trailing" secondItem="Vyd-a7-g7H" secondAttribute="trailing" constant="20" id="IZJ-Jy-0s9"/>
+                <constraint firstItem="FT3-xA-0yZ" firstAttribute="top" secondItem="1et-qd-9UY" secondAttribute="top" constant="16" id="M9h-a7-9sG"/>
+                <constraint firstAttribute="bottom" secondItem="Rmq-mR-S83" secondAttribute="bottom" constant="16" id="PcG-fb-daw"/>
+                <constraint firstItem="Vyd-a7-g7H" firstAttribute="top" secondItem="FT3-xA-0yZ" secondAttribute="bottom" id="QeT-gt-Ju6"/>
+                <constraint firstItem="Rmq-mR-S83" firstAttribute="centerX" secondItem="1et-qd-9UY" secondAttribute="centerX" id="VVz-IH-rmg"/>
+                <constraint firstItem="FT3-xA-0yZ" firstAttribute="leading" secondItem="Vyd-a7-g7H" secondAttribute="leading" id="XIY-F7-jNf"/>
+                <constraint firstItem="hNr-XF-RBU" firstAttribute="leading" secondItem="1et-qd-9UY" secondAttribute="leading" constant="16" id="tbQ-gD-qJK"/>
+                <constraint firstItem="Vyd-a7-g7H" firstAttribute="leading" secondItem="Z0F-Sl-HVI" secondAttribute="leading" constant="20" id="xMt-r7-irM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-355.07246376811599" y="-65.625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle.righthalf.fill" catalog="system" width="128" height="121"/>
+        <image name="crown.fill" catalog="system" width="128" height="92"/>
+        <image name="flag.square.fill" catalog="system" width="128" height="114"/>
+    </resources>
+</document>

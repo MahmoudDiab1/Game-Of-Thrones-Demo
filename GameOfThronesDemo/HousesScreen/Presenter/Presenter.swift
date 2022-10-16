@@ -7,31 +7,44 @@
 
 import Foundation
 
+// MARK: Presenter -
 protocol HousesPresenterProtocol {
-  func screenLoaded()
+    func loadHouses()
+    func attach(view: HousesViewProtocol)
 }
 
-struct HousesPresenter: HousesPresenterProtocol {
+class HousesPresenter: HousesPresenterProtocol {
     
-    //MARK: Dependencies -
+    // MARK: Properties -
     private let interactor: HousesInteractor?
-    private let view: HousesViewProtocol?
+    private var view: HousesViewProtocol?
+    private var currentPage = 0
     
-    //MARK: Initializers -
-    init (_ view: HousesViewProtocol,_ interactorType: HousesInteractorType) {
-        self.view = view
+    
+    // MARK: Initializers -
+    init (_ interactorType: HousesInteractorType) {
         self.interactor = interactorType.interactor
     }
-
-    func screenLoaded()  {
-        interactor?.getHouses { result in
+    
+    
+    // MARK: Functions -
+    func attach(view: HousesViewProtocol) {
+        self.view = view
+    }
+    
+    func loadHouses(){
+        view?.showActivityIndicator()
+        currentPage += 1
+        interactor?.getHouses(page: currentPage, completion: handleLoadingHousesResult(_:))
+    }
+    
+    private func handleLoadingHousesResult(_ result: Result<[HouseTarget], DefaultErrorModel>) {
+        view?.hideActivityIndicator()
             switch result {
             case .success(let items):
                 view?.updateHousesUI(items)
             case .failure(let error):
                 view?.showError(error: error.asAlertModel)
             }
-        }
     }
-
 }

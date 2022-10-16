@@ -1,13 +1,13 @@
 //
-//  HousTableViewCell.swift
-//  GameOfThronesDemo
+//  HouseTableViewCell.swift
+//  GOT
 //
-//  Created by Mahmoud Diab on 13/10/2022.
+//  Created by Mahmoud Diab on 15/10/2022.
 //
 
 import UIKit
 
-class HousTableViewCell: UITableViewCell {
+class HouseTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var regionLabel: UILabel!

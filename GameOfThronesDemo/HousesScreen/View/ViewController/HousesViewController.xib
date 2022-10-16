@@ -8,10 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HousesViewController" customModule="GameOfThronesDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HousesViewController" customModule="GOT" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundImageView" destination="fyE-lk-Kx5" id="Hu8-yh-7G5"/>
+                <outlet property="activityIndicator" destination="zHM-Ly-LaI" id="yt0-dv-uSN"/>
                 <outlet property="housesTableView" destination="eTk-YY-gFL" id="1R2-SK-sbJ"/>
+                <outlet property="topGOTImageView" destination="fyE-lk-Kx5" id="Hu8-yh-7G5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,13 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Game-Thrones" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-lk-Kx5">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-lk-Kx5">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-YY-gFL">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-YY-gFL">
                     <rect key="frame" x="0.0" y="305.5" width="414" height="556.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.044624379140000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zHM-Ly-LaI">
+                    <rect key="frame" x="155.5" y="161.5" width="103.5" height="134"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="WIY-oj-xOV"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,17 +41,21 @@
                 <constraint firstItem="eTk-YY-gFL" firstAttribute="trailing" secondItem="WIY-oj-xOV" secondAttribute="trailing" id="4UB-z9-F2o"/>
                 <constraint firstItem="fyE-lk-Kx5" firstAttribute="leading" secondItem="WIY-oj-xOV" secondAttribute="leading" id="6Rh-xU-CRp"/>
                 <constraint firstItem="fyE-lk-Kx5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Zy-3J-t3R"/>
+                <constraint firstItem="zHM-Ly-LaI" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.25" id="9o2-i3-P4m"/>
+                <constraint firstItem="zHM-Ly-LaI" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="GzV-SR-hhM"/>
                 <constraint firstItem="eTk-YY-gFL" firstAttribute="top" secondItem="fyE-lk-Kx5" secondAttribute="bottom" constant="10" id="Mj3-ra-35N"/>
                 <constraint firstItem="WIY-oj-xOV" firstAttribute="bottom" secondItem="eTk-YY-gFL" secondAttribute="bottom" id="OyT-KM-Bca"/>
+                <constraint firstItem="zHM-Ly-LaI" firstAttribute="bottom" secondItem="fyE-lk-Kx5" secondAttribute="bottom" id="SRR-ue-aW4"/>
                 <constraint firstItem="fyE-lk-Kx5" firstAttribute="trailing" secondItem="WIY-oj-xOV" secondAttribute="trailing" id="Z1Z-hP-I0w"/>
                 <constraint firstItem="fyE-lk-Kx5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.33" id="Z3j-qR-bov"/>
                 <constraint firstItem="eTk-YY-gFL" firstAttribute="leading" secondItem="WIY-oj-xOV" secondAttribute="leading" id="xMF-Ef-4Ct"/>
+                <constraint firstItem="zHM-Ly-LaI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ydz-af-K5F"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="62.946428571428569"/>
         </view>
     </objects>
     <resources>
-        <image name="Game-Thrones" width="640" height="360"/>
+        <image name="Background" width="640" height="360"/>
     </resources>
 </document>
