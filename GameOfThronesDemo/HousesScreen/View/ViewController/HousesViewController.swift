@@ -1,36 +1,45 @@
 //
 //  HousesViewController.swift
-//  GameOfThronesDemo
+//  GOT
 //
-//  Created by Mahmoud Diab on 13/10/2022.
+//  Created by Mahmoud Diab on 15/10/2022.
 //
 
-import UIKit 
-import CoreMedia
+import UIKit
 
-protocol HousesViewControllerRouter: class {
-    func navigateToDetailsPage(_ housModel: HouseTarget)
+
+// MARK: Flow -
+protocol HousesFlow {
+    func coordinateToHousDetails(house: HouseTarget)
 }
 
+// MARK: View -
 protocol HousesViewProtocol {
-    func updateHousesUI(_ items: [HouseTarget])
+    func updateHousesUI(_ houses: [HouseTarget])
     func showError(error: AlertErrorModel)
+    func showActivityIndicator()
+    func hideActivityIndicator()
 }
 
-class HousesViewController: UIViewController, HousesViewProtocol{
-    @IBOutlet weak var backgroundImageView: UIImageView!
+// MARK: View Controller -
+class HousesViewController: UIViewController{
+    
+    // MARK: Outlets -
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var topGOTImageView: UIImageView!
     @IBOutlet weak var housesTableView: UITableView!
     
-    private var items: [HouseTarget]?
     
-    lazy var presenter: HousesPresenterProtocol = {
-        return HousesPresenter(self, .remote(.urlSessionProvider))
-    }()
+    // MARK: Properties -
+    private var coordinator: HousesFlow?
+    private let presenter: HousesPresenter?
+    private var housesList = [HouseTarget]()
     
-    private weak var router: HousesViewControllerRouter?
     
-    init(router: HousesViewControllerRouter) {
-        self.router = router
+    // MARK: Initializers -
+    init(coordinator: HousesFlow?, presenter: HousesPresenter? ) {
+        self.coordinator = coordinator
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,24 +47,43 @@ class HousesViewController: UIViewController, HousesViewProtocol{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.screenLoaded()
         setupView()
+        presenter?.attach(view: self)
+        presenter?.loadHouses()
     }
     
+    
+    // MARK: Functions -
     private func setupView(){
-        housesTableView.delegate = self
-        housesTableView.dataSource = self
-        housesTableView.register(UINib(nibName: "HousTableViewCell", bundle: nil), forCellReuseIdentifier: "HousTableViewCell")
-        backgroundImageView.alpha = 0.1
-        UIView.animate(withDuration: 4){
-            self.backgroundImageView.alpha = 0.5
-        }
+        setupGOTTableView()
+        setupGOTImageView()
+        activityIndicator.isHidden = true
+        activityIndicator.hidesWhenStopped = true
     }
     
-    func updateHousesUI(_ items: [HouseTarget]) {
-        self.items = items
+    private func setupGOTTableView(){
+        housesTableView.delegate = self
+        housesTableView.prefetchDataSource = self
+        housesTableView.dataSource = self
+        housesTableView.registerCellNib(cell: .HouseTableViewCell)
+    }
+    
+    private func setupGOTImageView() {
+        topGOTImageView.alpha = 0.1
+        topGOTImageView.darken()
+    }
+}
+
+
+// MARK: Extensions -
+/// View Type
+extension HousesViewController: HousesViewProtocol{
+    func updateHousesUI(_ houses: [HouseTarget]) {
+        housesList.append(contentsOf: houses)
         housesTableView.reloadData()
     }
     
@@ -63,45 +91,46 @@ class HousesViewController: UIViewController, HousesViewProtocol{
         showAlert(error)
     }
     
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        UIView.animate(withDuration: 2) {
-            self.backgroundImageView.alpha = 1
-        }
+    func showActivityIndicator() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) { 
-        UIView.animate(withDuration: 2){
-            self.backgroundImageView.alpha = 0.4
-        }
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
 }
-extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
+/// TableView Delegate & DataSource
+extension HousesViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching { 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items?.count ?? 0
+        housesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "HousTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HousTableViewCell,
-              let items = items else{ return UITableViewCell() }
-        cell.configureCell(cellModel: items[indexPath.row])
+        let cellId = CellType.HouseTableViewCell.id
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId , for: indexPath) as? HouseTableViewCell
+        guard let cell = cell else { return UITableViewCell() }
+        cell.configureCell(cellModel: housesList[indexPath.row])
         cell.selectionStyle = .none
-        cell.contentView.alpha = 0
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let items = items else{ return }
-        router?.navigateToDetailsPage(items[indexPath.row])
+        coordinator?.coordinateToHousDetails(house: housesList[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let delay = 0.01 * Double(indexPath.row)
-        let duration =  1.0
-        UIView.animate(withDuration: duration, delay: delay) {
-            cell.contentView.alpha = 1
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if tableView.shouldPaginate(housesList.count){
+            presenter?.loadHouses()
         }
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        topGOTImageView.shine()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        topGOTImageView.darken()
     }
 }

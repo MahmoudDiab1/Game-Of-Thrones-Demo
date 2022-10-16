@@ -1,6 +1,6 @@
 //
 //  UILabel.swift
-//  GameOfThronesDemo
+//  GOT
 //
 //  Created by Mahmoud Diab on 13/10/2022.
 //

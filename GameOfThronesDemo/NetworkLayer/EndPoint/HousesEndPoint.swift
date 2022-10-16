@@ -8,7 +8,7 @@
 import Foundation
 
 enum HousesEndPoint: Endpoint {
-    case getHouses
+    case getHouses(_ page: Int)
 }
 
 extension HousesEndPoint {
@@ -33,7 +33,11 @@ extension HousesEndPoint {
     }
     
     private var parameter: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .getHouses(let page):
+            let parameters = [URLQueryItem(name: "page", value: "\(page)")]
+            return parameters
+        }
     } 
     
     private func buildUrlRequest() -> URLRequest? {
