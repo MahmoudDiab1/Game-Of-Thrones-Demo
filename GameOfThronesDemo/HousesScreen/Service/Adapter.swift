@@ -70,7 +70,7 @@ struct HouseAdapter: HouseTarget{
     }
     
     var ancestralWeapons: [String]?{
-        return model?.ancestralWeapons
+        return model?.cadetBranches
     }
     
     var name: String?{

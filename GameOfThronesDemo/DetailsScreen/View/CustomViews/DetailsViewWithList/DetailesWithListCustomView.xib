@@ -4,11 +4,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Game of Thrones.ttf">
+            <string>GameofThrones</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailesWithListCustomView" customModule="GOT" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="Tes-CR-a0d" id="zCG-Ga-Jb0"/>
                 <outlet property="list" destination="JcF-dB-vqU" id="gDG-oV-IYO"/>
                 <outlet property="title" destination="tRK-Gh-Uc0" id="KSd-1m-Vyx"/>
             </connections>
@@ -18,30 +25,47 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-Gh-Uc0">
-                    <rect key="frame" x="20" y="20" width="374" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" red="0.4941176471" green="0.5450980392" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-dB-vqU">
-                    <rect key="frame" x="0.0" y="69" width="414" height="807"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-CR-a0d">
+                    <rect key="frame" x="0.0" y="16" width="414" height="880"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-Gh-Uc0">
+                            <rect key="frame" x="40" y="20" width="334" height="16"/>
+                            <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="13"/>
+                            <color key="textColor" red="0.4941176471" green="0.5450980392" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-dB-vqU">
+                            <rect key="frame" x="20" y="56" width="374" height="804"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstItem="JcF-dB-vqU" firstAttribute="top" secondItem="tRK-Gh-Uc0" secondAttribute="bottom" constant="20" id="CgU-hZ-tZs"/>
+                        <constraint firstItem="tRK-Gh-Uc0" firstAttribute="leading" secondItem="Tes-CR-a0d" secondAttribute="leading" constant="40" id="MQd-68-ZdF"/>
+                        <constraint firstItem="JcF-dB-vqU" firstAttribute="leading" secondItem="Tes-CR-a0d" secondAttribute="leading" constant="20" id="a4b-Vo-zZS"/>
+                        <constraint firstItem="tRK-Gh-Uc0" firstAttribute="top" secondItem="Tes-CR-a0d" secondAttribute="top" constant="20" id="d0X-gU-y7j"/>
+                        <constraint firstAttribute="trailing" secondItem="JcF-dB-vqU" secondAttribute="trailing" constant="20" id="il1-nq-i8h"/>
+                        <constraint firstAttribute="trailing" secondItem="tRK-Gh-Uc0" secondAttribute="trailing" constant="40" id="pYg-S8-GcE"/>
+                        <constraint firstAttribute="bottom" secondItem="JcF-dB-vqU" secondAttribute="bottom" constant="20" id="tjc-1B-bIG"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="JcF-dB-vqU" secondAttribute="trailing" id="17t-Mi-b1w"/>
-                <constraint firstItem="tRK-Gh-Uc0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="KVL-nC-XIZ"/>
-                <constraint firstItem="JcF-dB-vqU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Op2-Yf-kzJ"/>
-                <constraint firstItem="tRK-Gh-Uc0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Z1R-Lr-lRJ"/>
-                <constraint firstAttribute="trailing" secondItem="tRK-Gh-Uc0" secondAttribute="trailing" constant="20" id="bc3-wa-OTI"/>
-                <constraint firstAttribute="bottom" secondItem="JcF-dB-vqU" secondAttribute="bottom" constant="20" id="eyc-O0-Nqo"/>
-                <constraint firstItem="JcF-dB-vqU" firstAttribute="top" secondItem="tRK-Gh-Uc0" secondAttribute="bottom" constant="20" id="sfZ-ZG-Rud"/>
+                <constraint firstAttribute="bottom" secondItem="Tes-CR-a0d" secondAttribute="bottom" id="7lT-YX-OcN"/>
+                <constraint firstItem="Tes-CR-a0d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="OVL-LF-dBV"/>
+                <constraint firstItem="Tes-CR-a0d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YcV-Hk-rfn"/>
+                <constraint firstAttribute="trailing" secondItem="Tes-CR-a0d" secondAttribute="trailing" id="nE4-yc-ibF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="132" y="76"/>
+            <point key="canvasLocation" x="131.8840579710145" y="75.669642857142847"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
