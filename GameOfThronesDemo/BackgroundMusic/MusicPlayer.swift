@@ -8,12 +8,33 @@
 import Foundation
 import AVFoundation
 
-class MusicPlayer {
-    static let shared = MusicPlayer()
-    var audioPlayer: AVAudioPlayer?
+// MARK: Track Types -
+enum MP3Track{
+    case GOTBackground
     
-    func startBackgroundMusic(backgroundMusicFileName: String) {
-        if let bundle = Bundle.main.path(forResource: backgroundMusicFileName, ofType: "mp3") {
+    var fileName: String {
+        switch self {
+        case .GOTBackground:
+            let fileName = "GOT"
+            return fileName
+        }
+    }
+}
+
+// MARK: MusicPlayer -
+protocol MusicPlayer {
+    mutating func startBackgroundMusic(_ track: MP3Track)
+    func stopBackgroundMusic()
+}
+
+struct DefaultMusicPlayer: MusicPlayer{
+    
+    // MARK: Properties -
+    private var audioPlayer: AVAudioPlayer?
+    
+    // MARK: Functions -
+    mutating func startBackgroundMusic(_ track: MP3Track) {
+        if let bundle = Bundle.main.path(forResource: track.fileName, ofType: "mp3") {
             let backgroundMusic = NSURL(fileURLWithPath: bundle)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)

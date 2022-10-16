@@ -30,9 +30,8 @@
 		0A79A5F028F7F55A0018224E /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A5EF28F7F55A0018224E /* Adapter.swift */; };
 		0A79A5FA28F848210018224E /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A5F828F848210018224E /* HousesViewController.swift */; };
 		0A79A5FB28F848210018224E /* HousesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79A5F928F848210018224E /* HousesViewController.xib */; };
-		0A79A61F28F883A00018224E /* MusicPlayer.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A61E28F883A00018224E /* MusicPlayer.swift.swift */; };
-		0A79A62128F8851B0018224E /* game_of_thrones.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A79A62028F8851A0018224E /* game_of_thrones.mp3 */; };
-		0A8B265928F8895B00DA40EE /* Viking_War.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B265828F8895B00DA40EE /* Viking_War.mp3 */; };
+		0A79A61F28F883A00018224E /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A61E28F883A00018224E /* MusicPlayer.swift */; };
+		0A79A62128F8851B0018224E /* GOT.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A79A62028F8851A0018224E /* GOT.mp3 */; };
 		0A8B265F28F8952600DA40EE /* Game of Thrones.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B265E28F894F600DA40EE /* Game of Thrones.ttf */; };
 		0A8B266228F89D6C00DA40EE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B266128F89D6C00DA40EE /* UILabel.swift */; };
 		0A8B266928F8A83600DA40EE /* HouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B266728F8A83600DA40EE /* HouseTableViewCell.swift */; };
@@ -99,9 +98,8 @@
 		0A79A5EF28F7F55A0018224E /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		0A79A5F828F848210018224E /* HousesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
 		0A79A5F928F848210018224E /* HousesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HousesViewController.xib; sourceTree = "<group>"; };
-		0A79A61E28F883A00018224E /* MusicPlayer.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift.swift; sourceTree = "<group>"; };
-		0A79A62028F8851A0018224E /* game_of_thrones.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_of_thrones.mp3; path = "../../../Music/Music/Media.localized/Music/Unknown Artist/Unknown Album/game_of_thrones.mp3"; sourceTree = "<group>"; };
-		0A8B265828F8895B00DA40EE /* Viking_War.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Viking_War.mp3; path = ../../../Downloads/Viking_War.mp3; sourceTree = "<group>"; };
+		0A79A61E28F883A00018224E /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		0A79A62028F8851A0018224E /* GOT.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = GOT.mp3; path = "../../../Music/Music/Media.localized/Music/Unknown Artist/Unknown Album/GOT.mp3"; sourceTree = "<group>"; };
 		0A8B265E28F894F600DA40EE /* Game of Thrones.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Game of Thrones.ttf"; sourceTree = "<group>"; };
 		0A8B266128F89D6C00DA40EE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0A8B266428F89D8A00DA40EE /* throne-game-of-thrones.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "throne-game-of-thrones.gif"; sourceTree = "<group>"; };
@@ -280,9 +278,8 @@
 		0A79A61D28F883880018224E /* BackgroundMusic */ = {
 			isa = PBXGroup;
 			children = (
-				0A79A62028F8851A0018224E /* game_of_thrones.mp3 */,
-				0A8B265828F8895B00DA40EE /* Viking_War.mp3 */,
-				0A79A61E28F883A00018224E /* MusicPlayer.swift.swift */,
+				0A79A61E28F883A00018224E /* MusicPlayer.swift */,
+				0A79A62028F8851A0018224E /* GOT.mp3 */,
 			);
 			path = BackgroundMusic;
 			sourceTree = "<group>";
@@ -584,8 +581,7 @@
 				0A8B265F28F8952600DA40EE /* Game of Thrones.ttf in Resources */,
 				0ACC2C8028F7313B005065DE /* LaunchScreen.storyboard in Resources */,
 				0A31283128FB122900A2FEC7 /* CharacterTableViewCell.xib in Resources */,
-				0A8B265928F8895B00DA40EE /* Viking_War.mp3 in Resources */,
-				0A79A62128F8851B0018224E /* game_of_thrones.mp3 in Resources */,
+				0A79A62128F8851B0018224E /* GOT.mp3 in Resources */,
 				0A31283628FB122900A2FEC7 /* HouseDetailesCard.xib in Resources */,
 				0A79A5FB28F848210018224E /* HousesViewController.xib in Resources */,
 				0A31283B28FB122900A2FEC7 /* HouseDetailsViewController.xib in Resources */,
@@ -638,7 +634,7 @@
 				0A79A5F028F7F55A0018224E /* Adapter.swift in Sources */,
 				0A8B266228F89D6C00DA40EE /* UILabel.swift in Sources */,
 				0A79A5EE28F7F0CE0018224E /* Model.swift in Sources */,
-				0A79A61F28F883A00018224E /* MusicPlayer.swift.swift in Sources */,
+				0A79A61F28F883A00018224E /* MusicPlayer.swift in Sources */,
 				0A31284928FB13CC00A2FEC7 /* AppCoordinator.swift in Sources */,
 				0A31284B28FB13E100A2FEC7 /* Coordinator.swift in Sources */,
 				0ACC2CC728F745A9005065DE /* APIError.swift in Sources */,

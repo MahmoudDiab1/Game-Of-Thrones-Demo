@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="16" width="352" height="12"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="12"/>
-                                <color key="textColor" red="0.47058823529411764" green="0.35686274509803922" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.56659695128051213" green="0.47152579781912773" blue="0.23373255552220892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

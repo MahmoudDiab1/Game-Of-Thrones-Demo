@@ -10,13 +10,22 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //MARK: Variables -
+    //MARK: Properties -
     var window: UIWindow?
     var coordinator: AppCoordinator?
+    lazy var musicPlayer: MusicPlayer = {
+        let player = DefaultMusicPlayer()
+        return player
+    }()
+    
     
     //MARK: App lifeCycle -
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "game_of_thrones") 
+        
+        /// Background Music
+        musicPlayer.startBackgroundMusic(.GOTBackground)
+        
+        /// Navigation
         window = UIWindow()
         coordinator = AppCoordinator(window: window!)
         coordinator?.start()
