@@ -1,12 +1,13 @@
 //
 //  Adapter.swift
-//  GameOfThronesDemo
+//  GOT
 //
 //  Created by Mahmoud Diab on 13/10/2022.
 //
 
 import Foundation
 
+// MARK: Target -
 protocol HouseTarget {
     var name: String? { get }
     var region: String? { get }
@@ -22,8 +23,20 @@ protocol HouseTarget {
     var url:String? {get}
 }
 
+// MARK: Adapter -
 struct HouseAdapter: HouseTarget{
     
+    // MARK: Adaptee -
+    private let model: HouseModel?
+    
+    
+    // MARK: Initializers -
+    init(_ housResponseModel: HouseModel){
+        self.model = housResponseModel
+    }
+    
+    
+    // MARK: Properties -
     var words: String?{
         return model?.words
     }
@@ -57,7 +70,7 @@ struct HouseAdapter: HouseTarget{
     }
     
     var ancestralWeapons: [String]?{
-        return model?.titles
+        return model?.ancestralWeapons
     }
     
     var name: String?{
@@ -71,14 +84,9 @@ struct HouseAdapter: HouseTarget{
     var cadetBranches: [String]?{
         return model?.cadetBranches
     }
+    
     var url: String? {
         return model?.url
-    }
-    
-    private let model: HouseModel?
-    
-    init(_ housResponseModel: HouseModel){
-        self.model = housResponseModel
     }
 }
 

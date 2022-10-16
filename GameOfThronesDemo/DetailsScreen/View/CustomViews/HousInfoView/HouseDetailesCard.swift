@@ -57,15 +57,15 @@ class HouseDetailesCard: UIView {
     
     
     private func styleCell() {
-        containerView.addGOTEffectShadow()
-        culturView.addGOTEffectShadow()
-        genderView.addGOTEffectShadow()
+        containerView.addGOTEffectCardStyle()
+        culturView.addGOTEffectCardStyle()
+        genderView.addGOTEffectCardStyle()
     }
     
 }
 
 extension UIView{
-    func addGOTEffectShadow() {
+    func addGOTEffectCardStyle() {
         self.layer.cornerRadius = 12
         self.layer.borderColor = UIColor.orange.cgColor
         self.layer.borderWidth = 0.08

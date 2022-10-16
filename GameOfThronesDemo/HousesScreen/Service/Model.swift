@@ -1,18 +1,13 @@
 //
 //  HousesRemoteResult.swift.swift
-//  GameOfThronesDemo
+//  GOT
 //
 //  Created by Mahmoud Diab on 13/10/2022.
 //
 
 import Foundation 
 
-enum RemoteError: Error {
-    case offline
-    case invalidData
-    case serverError
-}
-
+// MARK: Response Model -
 struct HouseModel: Decodable {
     let url: String?
     let name, region, coatOfArms, words: String?
@@ -24,5 +19,13 @@ struct HouseModel: Decodable {
     let cadetBranches, swornMembers: [String]?
 }
 
+// MARK: Result Error -
+enum RemoteError: Error {
+    case offline
+    case invalidData
+    case serverError
+}
+
+// MARK: House Response Result
 typealias HousesResponseModel = [HouseModel]
 typealias HousesRemoteResult = (Result<HousesResponseModel, RemoteError>) -> ()

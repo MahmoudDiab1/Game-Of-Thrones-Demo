@@ -26,6 +26,8 @@
 		0A31284728FB13CC00A2FEC7 /* HousDetailsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31284328FB13CC00A2FEC7 /* HousDetailsFlow.swift */; };
 		0A31284928FB13CC00A2FEC7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31284528FB13CC00A2FEC7 /* AppCoordinator.swift */; };
 		0A31284B28FB13E100A2FEC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31284A28FB13E100A2FEC7 /* Coordinator.swift */; };
+		0A4866C428FC2F13008D6C72 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4866C328FC2F13008D6C72 /* UITableView.swift */; };
+		0A4866CC28FC4174008D6C72 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4866CB28FC4174008D6C72 /* UIImageView.swift */; };
 		0A79A5EE28F7F0CE0018224E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A5ED28F7F0CE0018224E /* Model.swift */; };
 		0A79A5F028F7F55A0018224E /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A5EF28F7F55A0018224E /* Adapter.swift */; };
 		0A79A5FA28F848210018224E /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79A5F828F848210018224E /* HousesViewController.swift */; };
@@ -94,6 +96,8 @@
 		0A31284328FB13CC00A2FEC7 /* HousDetailsFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousDetailsFlow.swift; sourceTree = "<group>"; };
 		0A31284528FB13CC00A2FEC7 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0A31284A28FB13E100A2FEC7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = ../../../../.Trash/Coordinator.swift; sourceTree = "<group>"; };
+		0A4866C328FC2F13008D6C72 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		0A4866CB28FC4174008D6C72 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		0A79A5ED28F7F0CE0018224E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0A79A5EF28F7F55A0018224E /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		0A79A5F828F848210018224E /* HousesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
@@ -269,8 +273,8 @@
 		0A79A61C28F858A50018224E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0A79A5F928F848210018224E /* HousesViewController.xib */,
 				0A79A5F828F848210018224E /* HousesViewController.swift */,
+				0A79A5F928F848210018224E /* HousesViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -290,6 +294,8 @@
 				0A8B266128F89D6C00DA40EE /* UILabel.swift */,
 				0A8B266F28F8CF7600DA40EE /* UIViewController.swift */,
 				0AE0929128FB3DCE00FD7E7A /* UIView.swift */,
+				0A4866C328FC2F13008D6C72 /* UITableView.swift */,
+				0A4866CB28FC4174008D6C72 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +617,7 @@
 			files = (
 				0ACC2CDB28F7480B005065DE /* EndPoint.swift in Sources */,
 				0ACC2CC928F745CA005065DE /* NetworkEngine.swift in Sources */,
+				0A4866C428FC2F13008D6C72 /* UITableView.swift in Sources */,
 				0A31283728FB122900A2FEC7 /* DetailsRemote.swift in Sources */,
 				0A79A5FA28F848210018224E /* HousesViewController.swift in Sources */,
 				0A31283028FB122900A2FEC7 /* HousDetailsPresenter.swift in Sources */,
@@ -634,6 +641,7 @@
 				0A79A5F028F7F55A0018224E /* Adapter.swift in Sources */,
 				0A8B266228F89D6C00DA40EE /* UILabel.swift in Sources */,
 				0A79A5EE28F7F0CE0018224E /* Model.swift in Sources */,
+				0A4866CC28FC4174008D6C72 /* UIImageView.swift in Sources */,
 				0A79A61F28F883A00018224E /* MusicPlayer.swift in Sources */,
 				0A31284928FB13CC00A2FEC7 /* AppCoordinator.swift in Sources */,
 				0A31284B28FB13E100A2FEC7 /* Coordinator.swift in Sources */,

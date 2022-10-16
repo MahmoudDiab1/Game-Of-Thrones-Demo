@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-protocol HousesFlow {
-    func coordinateToHousDetails(house: HouseTarget)
-}
 
 class HousesCoordinator: Coordinator {
     

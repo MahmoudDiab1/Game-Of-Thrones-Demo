@@ -5,8 +5,8 @@
 //  Created by Mahmoud Diab on 15/10/2022.
 //
 
-import Foundation
 import UIKit
+
 extension UIView {
     func fadeTransition(_ duration:CFTimeInterval) {
         let animation = CATransition()

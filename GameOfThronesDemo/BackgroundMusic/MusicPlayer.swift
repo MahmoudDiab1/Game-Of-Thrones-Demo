@@ -1,11 +1,10 @@
 //
-//  MusicPlayer.swift.swift
-//  GameOfThronesDemo
+//  MusicPlayer.swift
+//  GOT
 //
 //  Created by Mahmoud Diab on 13/10/2022.
 //
 
-import Foundation
 import AVFoundation
 
 // MARK: Track Types -

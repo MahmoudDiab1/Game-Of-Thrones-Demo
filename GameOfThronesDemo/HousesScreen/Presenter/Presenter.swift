@@ -6,47 +6,45 @@
 //
 
 import Foundation
-import UIKit
 
+// MARK: Presenter -
 protocol HousesPresenterProtocol {
-    func screenLoaded()
-    func getHouses()
-    var isLoading: Bool {get set}
-    func setupView(view: HousesViewProtocol)
+    func loadHouses()
+    func attach(view: HousesViewProtocol)
 }
 
 class HousesPresenter: HousesPresenterProtocol {
-    func setupView(view: HousesViewProtocol) {
-        self.view = view
-        
-    }
     
-    //MARK: Dependencies -
+    // MARK: Properties -
     private let interactor: HousesInteractor?
     private var view: HousesViewProtocol?
+    private var currentPage = 0
     
-    //MARK: Initializers -
+    
+    // MARK: Initializers -
     init (_ interactorType: HousesInteractorType) {
         self.interactor = interactorType.interactor
     }
     
-     func screenLoaded()  {
-        getHouses()
+    
+    // MARK: Functions -
+    func attach(view: HousesViewProtocol) {
+        self.view = view
     }
     
-    var currentPage: Int = 0
-    var isLoading: Bool = false  
-     func getHouses(){
-        isLoading = true
+    func loadHouses(){
+        view?.showActivityIndicator()
         currentPage += 1
-        interactor?.getHouses(page: currentPage) { result in
-            self.isLoading = false
+        interactor?.getHouses(page: currentPage, completion: handleLoadingHousesResult(_:))
+    }
+    
+    private func handleLoadingHousesResult(_ result: Result<[HouseTarget], DefaultErrorModel>) {
+        view?.hideActivityIndicator()
             switch result {
             case .success(let items):
-                self.view?.updateHousesUI(items)
+                view?.updateHousesUI(items)
             case .failure(let error):
-                self.view?.showError(error: error.asAlertModel)
+                view?.showError(error: error.asAlertModel)
             }
-        }
     }
 }
