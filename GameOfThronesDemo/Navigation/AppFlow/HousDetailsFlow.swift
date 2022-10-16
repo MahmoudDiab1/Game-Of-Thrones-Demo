@@ -23,7 +23,7 @@ class HousDetailsCoordinator: Coordinator {
     }
     
     func start() {
-        let presenter = HousDetailsPresenter(.remote(.urlSessionProvider), model: housDetailsModel)
+        let presenter = HouseDetailsPresenter(.remote(.urlSessionProvider), model: housDetailsModel)
         let controller = HouseDetailsViewController(presenter:  presenter, coordinator: self) 
         navigationController.pushViewController(controller, animated: true)
     }

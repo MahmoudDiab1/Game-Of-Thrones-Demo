@@ -28,6 +28,6 @@ class HouseTableViewCell: UITableViewCell {
     }
     
     private func styleCell() {
-        containerView.addGOTEffectCardStyle()
+        containerView.addGOTStyle()
     }
 }

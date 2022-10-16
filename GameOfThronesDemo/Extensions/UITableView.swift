@@ -10,11 +10,14 @@ import UIKit
 // MARK: Cell -
 enum CellType: String{
     case HouseTableViewCell
+    case HouseDetailesCard
     
     var id:String{
         switch self {
         case .HouseTableViewCell:
             return "HouseTableViewCell"
+        case .HouseDetailesCard:
+            return "CharacterTableViewCell"
         }
     }
     
@@ -22,6 +25,8 @@ enum CellType: String{
         switch self {
         case .HouseTableViewCell:
             return "HouseTableViewCell"
+        case .HouseDetailesCard:
+            return "CharacterTableViewCell"
         }
     }
 }
