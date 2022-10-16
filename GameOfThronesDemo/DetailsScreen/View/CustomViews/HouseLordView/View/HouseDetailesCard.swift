@@ -66,7 +66,7 @@ class HouseDetailesCard: UIView {
 /// View Type
 extension HouseDetailesCard: HouseDetailesCardViewProtocol{
     func setupEmptyView() {
-        self.subviews.map{$0.removeFromSuperview()} 
+        let _ = self.subviews.map{$0.removeFromSuperview()} 
     }
     
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String){
