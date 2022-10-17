@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 // MARK: View -
-protocol DetailesWithListViewProtocol{
-    func setupDetailsInfo(model: AncestralWeapons)
+protocol WeaponsListViewProtocol{
+    func setupWeaponsList(model: AncestralWeapons)
     func setupEmptyView()
 }
 
-class DetailesWithListCustomView: UIView, DetailesWithListViewProtocol{ 
+class WeaponsListCustomView: UIView, WeaponsListViewProtocol{ 
     
     // MARK: Outlets -
     @IBOutlet weak var list: UITableView!
@@ -23,12 +23,12 @@ class DetailesWithListCustomView: UIView, DetailesWithListViewProtocol{
     @IBOutlet weak var containerView: UIView!
     
     // MARK: Properties -
-    private var presenter: DetailsViewWithListPresenterProtocol?
+    private var presenter: WeaponsListPresenterProtocol?
     private var weapons = [String]()
     
     
     // MARK: Initializers -
-    init(frame: CGRect, presenter: DetailsViewWithListPresenterProtocol?) {
+    init(frame: CGRect, presenter: WeaponsListPresenterProtocol?) {
         super.init(frame: frame)
         self.presenter = presenter
         commonInit()
@@ -42,7 +42,7 @@ class DetailesWithListCustomView: UIView, DetailesWithListViewProtocol{
     
     // MARK: Functions -
     private func commonInit() {
-        guard let view = Bundle.main.loadNibNamed("DetailesWithListCustomView", owner: self, options: nil)?.first as? UIView else { return }
+        guard let view = Bundle.main.loadNibNamed("WeaponsListCustomView", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         for view in self.subviews {
@@ -51,12 +51,12 @@ class DetailesWithListCustomView: UIView, DetailesWithListViewProtocol{
         addSubview(view)
         presenter?.attach(view: self)
         presenter?.viewLoaded()
-        list.registerCellNib(cell: .HouseDetailesCard)
+        list.registerCellNib(cell: .weaponCell)
         list.dataSource = self
         containerView.addGOTStyle()
     }
     
-    func setupDetailsInfo(model: AncestralWeapons) {
+    func setupWeaponsList(model: AncestralWeapons) {
         title.text = model.title
         weapons.append(contentsOf: model.weapons ?? [])
         list.reloadData()
@@ -69,14 +69,14 @@ class DetailesWithListCustomView: UIView, DetailesWithListViewProtocol{
 
 
 // MARK: Extensions -
-extension DetailesWithListCustomView: UITableViewDataSource{
+extension WeaponsListCustomView: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weapons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = CellType.HouseDetailesCard.id
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? CharacterTableViewCell
+        let cellId = CellType.weaponCell.id
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? WeaponTableViewCell
         guard let cell = cell else {return UITableViewCell()}
         cell.configureCell(weapons[indexPath.row])
         return cell

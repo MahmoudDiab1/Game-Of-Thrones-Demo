@@ -8,13 +8,13 @@
 import UIKit
 
 // MARK: View -
-protocol HouseDetailesCardViewProtocol{
+protocol HouseLordCardViewProtocol{
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String)
     func failedToLoadCard()
     func setupEmptyView()
 }
 
-class HouseDetailesCard: UIView {
+class HouseLordCard: UIView {
     // MARK: Outlets -
     @IBOutlet weak var houseName: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -27,11 +27,11 @@ class HouseDetailesCard: UIView {
     
     
     // MARK: Properties -
-    private var presenter: HouseDetailsCardPresenterProtocol?
+    private var presenter: HouseLordCardPresenterProtocol?
     
     
     // MARK: Initializers -
-    init(frame: CGRect,_ presenter: HouseDetailsCardPresenterProtocol?) {
+    init(frame: CGRect,_ presenter: HouseLordCardPresenterProtocol?) {
         super.init(frame: frame)
         self.presenter = presenter
         commonInit()
@@ -45,7 +45,7 @@ class HouseDetailesCard: UIView {
     
     // MARK: Functions -
     private func commonInit() {
-        guard let view = Bundle.main.loadNibNamed("HouseDetailesCard", owner: self, options: nil)?.first as? UIView else { return }
+        guard let view = Bundle.main.loadNibNamed("HouseLordCard", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         let _ = subviews.map{$0.removeFromSuperview()}
@@ -64,9 +64,10 @@ class HouseDetailesCard: UIView {
 
 // MARK: Extensions -
 /// View Type
-extension HouseDetailesCard: HouseDetailesCardViewProtocol{
+extension HouseLordCard: HouseLordCardViewProtocol{
     func setupEmptyView() {
-        let _ = self.subviews.map{$0.removeFromSuperview()} 
+        let _ = self.subviews.map{$0.removeFromSuperview()}
+        // TODO: Handle empty view
     }
     
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String){

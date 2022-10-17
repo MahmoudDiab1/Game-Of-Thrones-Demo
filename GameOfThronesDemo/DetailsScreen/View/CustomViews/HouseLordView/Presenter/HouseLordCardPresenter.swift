@@ -1,5 +1,5 @@
 //
-//  HouseDetailsCardPresenter.swift
+//  HouseLordCardPresenter.swift
 //  GOT
 //
 //  Created by Mahmoud Diab on 16/10/2022.
@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: Presenter -
-protocol HouseDetailsCardPresenterProtocol{
-    mutating func attach(view: HouseDetailesCardViewProtocol)
+protocol HouseLordCardPresenterProtocol{
+    mutating func attach(view: HouseLordCardViewProtocol)
     func viewLoaded()
 }
 
-struct HouseDetailsCardPresenter: HouseDetailsCardPresenterProtocol {
+struct HouseLordCardPresenter: HouseLordCardPresenterProtocol {
     // MARK: Properties -
-    private var view: HouseDetailesCardViewProtocol?
+    private var view: HouseLordCardViewProtocol?
     private let interactor: HouseDetailsInteractor?
     private let housModel: HouseTarget?
     
@@ -28,7 +28,7 @@ struct HouseDetailsCardPresenter: HouseDetailsCardPresenterProtocol {
     
     
     // MARK: Functions -
-    mutating func attach(view: HouseDetailesCardViewProtocol) {
+    mutating func attach(view: HouseLordCardViewProtocol) {
         self.view = view
     }
     

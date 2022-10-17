@@ -7,28 +7,22 @@
 
 import Foundation
 
-enum HouseDetailsRemoteType {
-    case urlSessionProvider
-    
-    var remoteEngine: HouseDetailsRemote {
-        switch self {
-        case .urlSessionProvider:
-            return HouseDetailsRemoteURLSession(URLSessionEngine(sessionType: .urlSession(config: .defaultConfig)))
-        }
-    }
-}
-
+ // MARK: Remote -
 protocol HouseDetailsRemote {
     func getCharacter(endPoint: Endpoint, completion: @escaping CharacterRemoteResult)
 }
 
 struct HouseDetailsRemoteURLSession: HouseDetailsRemote  {
+    // MARK: Properties -
     private let networkEngine: NetworkEngine
     
+    
+    // MARK: Initializers -
     init(_ networkEngine: NetworkEngine) {
         self.networkEngine = networkEngine
     }
     
+    // MARK: Functions -
     func getCharacter(endPoint: Endpoint, completion: @escaping CharacterRemoteResult ){
         guard let request = endPoint.urlRequest else {return}
          
@@ -52,6 +46,18 @@ struct HouseDetailsRemoteURLSession: HouseDetailsRemote  {
             return .invalidData
         default:
             return .serverError
+        }
+    }
+}
+
+// MARK: Remote types -
+enum HouseDetailsRemoteType {
+    case urlSessionProvider
+    
+    var remoteEngine: HouseDetailsRemote {
+        switch self {
+        case .urlSessionProvider:
+            return HouseDetailsRemoteURLSession(URLSessionEngine(sessionType: .urlSession(config: .defaultConfig)))
         }
     }
 }

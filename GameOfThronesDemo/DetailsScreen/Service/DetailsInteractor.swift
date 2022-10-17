@@ -7,21 +7,25 @@
 
 import Foundation
  
+// MARK: Result -
 typealias CharacterViewResult = (Result<CharacterTarget, DefaultErrorModel>) -> ()
 
+// MARK: Interactor -
 protocol HouseDetailsInteractor{
     func getCharacter(url: URL, completion: @escaping CharacterViewResult)
 }
 
 struct HouseDetailsRemoteStore: HouseDetailsInteractor {
-    
-    
+    // MARK: Properties -
     private let remote: HouseDetailsRemote?
     
+    
+    // MARK: Initializers -
     init(_ provider: HouseDetailsRemoteType) {
         self.remote = provider.remoteEngine
     }
     
+    // MARK: Functions -
     func getCharacter(url: URL, completion: @escaping CharacterViewResult) {
         remote?.getCharacter(endPoint: HouseDetailsEndPoint.getCharacter(url: url)){ result in
             switch result {
@@ -44,10 +48,9 @@ struct HouseDetailsRemoteStore: HouseDetailsInteractor {
     }
 }
 
-
+// MARK: Interactor type -
 enum HouseDetailesInteractorType {
     case remote(_ provider: HouseDetailsRemoteType)
-    
     var interactor: HouseDetailsInteractor {
         switch self {
         case .remote(let provider):

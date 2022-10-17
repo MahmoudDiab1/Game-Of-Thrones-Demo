@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Target
 protocol CharacterTarget {
     var name: String? { get }
     var gender: String? { get }
@@ -14,7 +15,14 @@ protocol CharacterTarget {
     var aliase: String? { get } 
 }
 
+// MARK: Adapter -
 struct CharacterAdapter: CharacterTarget{
+    
+    // MARK: Properties -
+    /// Adaptee
+    private let model: CharacterResponseModel?
+    
+    /// Target members
     var name: String?{
         return model?.name
     }
@@ -32,12 +40,11 @@ struct CharacterAdapter: CharacterTarget{
     }
     
     
-    
-    private let model: CharacterResponseModel?
-    
+    // MARK: Initializers -
     init(_ characterResponseModel: CharacterResponseModel){
         self.model = characterResponseModel
     }
+    
 }
 
 

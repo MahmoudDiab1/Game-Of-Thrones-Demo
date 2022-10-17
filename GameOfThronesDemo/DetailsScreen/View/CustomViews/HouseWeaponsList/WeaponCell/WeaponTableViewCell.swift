@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterTableViewCell: UITableViewCell {
+class WeaponTableViewCell: UITableViewCell {
     // MARK: Outlets -
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
