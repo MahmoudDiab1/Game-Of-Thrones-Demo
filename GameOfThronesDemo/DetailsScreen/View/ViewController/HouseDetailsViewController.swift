@@ -59,9 +59,9 @@ class HouseDetailsViewController: UIViewController{
         navigationController?.styleNav()
         leftButtonView.addAclerycStyle()
         rightButtonView.addAclerycStyle()
-        leftButtonView.layer.borderWidth = 0
-        rightButtonView.layer.borderColor = UIColor.orange.cgColor
-        rightButtonView.layer.borderWidth = 1
+        rightButtonView.layer.borderWidth = 0
+        leftButtonView.layer.borderColor = UIColor.orange.cgColor
+        leftButtonView.layer.borderWidth = 1
     }
     
     
@@ -74,7 +74,6 @@ class HouseDetailsViewController: UIViewController{
     }
     
     @IBAction func leftButtonPressed(_ sender: Any) {
-        
         rightButtonView.layer.borderWidth = 0
         leftButtonView.layer.borderColor = UIColor.orange.cgColor
         leftButtonView.layer.borderWidth = 1
