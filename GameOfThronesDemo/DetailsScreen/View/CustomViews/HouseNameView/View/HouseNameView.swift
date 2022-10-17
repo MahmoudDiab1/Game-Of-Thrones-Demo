@@ -14,6 +14,7 @@ protocol HouseNameViewProtocol{
 
 class HouseNameView: UIView{
     // MARK: Outlets -
+    @IBOutlet weak var backGroundImageView: UIImageView!
     @IBOutlet weak var houseName: UILabel!
     @IBOutlet weak var containerView: UIView!
     
@@ -49,6 +50,7 @@ class HouseNameView: UIView{
     
     private func styleView() {
         containerView.addGOTStyle()
+        backGroundImageView.layer.cornerRadius = 12
     }
 }
 

@@ -15,6 +15,7 @@ protocol HouseLordCardViewProtocol{
 
 class HouseLordCard: UIView {
     // MARK: Outlets -
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var houseName: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var culturView: UIView!
@@ -56,8 +57,9 @@ class HouseLordCard: UIView {
     
     private func styleView() {
         containerView.addGOTStyle()
-        culturView.addGOTStyle()
-        genderView.addGOTStyle()
+        culturView.addAclerycStyle()
+        genderView.addAclerycStyle()
+        backgroundImageView.layer.cornerRadius = 12
     }
 }
 

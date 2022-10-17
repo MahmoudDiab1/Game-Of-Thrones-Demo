@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HouseLordCard" customModule="GOT" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="WMH-lr-B76" id="sSu-7J-DKD"/>
                 <outlet property="containerView" destination="1et-qd-9UY" id="ETS-Vp-1H3"/>
                 <outlet property="culturView" destination="hY5-sl-4yg" id="K2H-VQ-Jbv"/>
                 <outlet property="culture" destination="QWp-Zi-7h9" id="g4X-FF-Roa"/>
@@ -30,6 +31,9 @@
             <rect key="frame" x="0.0" y="0.0" width="562" height="473"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.089999999999999997" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LordCardBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="WMH-lr-B76">
+                    <rect key="frame" x="0.0" y="0.0" width="562" height="473"/>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-mR-S83">
                     <rect key="frame" x="28" y="417" width="506" height="40"/>
                     <subviews>
@@ -120,7 +124,9 @@
             <viewLayoutGuide key="safeArea" id="Z0F-Sl-HVI"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="WMH-lr-B76" firstAttribute="leading" secondItem="Z0F-Sl-HVI" secondAttribute="leading" id="518-3b-tpn"/>
                 <constraint firstItem="hNr-XF-RBU" firstAttribute="top" secondItem="Vyd-a7-g7H" secondAttribute="bottom" constant="8" symbolic="YES" id="7C9-5F-EtL"/>
+                <constraint firstAttribute="bottom" secondItem="WMH-lr-B76" secondAttribute="bottom" id="91T-9C-lCp"/>
                 <constraint firstItem="Rmq-mR-S83" firstAttribute="top" secondItem="hNr-XF-RBU" secondAttribute="bottom" constant="16" id="Dah-Pw-1I1"/>
                 <constraint firstItem="Rmq-mR-S83" firstAttribute="width" secondItem="1et-qd-9UY" secondAttribute="width" multiplier="0.9" id="EKf-T4-u3g"/>
                 <constraint firstAttribute="trailing" secondItem="hNr-XF-RBU" secondAttribute="trailing" constant="16" id="IEJ-RE-Scb"/>
@@ -129,7 +135,9 @@
                 <constraint firstAttribute="bottom" secondItem="Rmq-mR-S83" secondAttribute="bottom" constant="16" id="PcG-fb-daw"/>
                 <constraint firstItem="Vyd-a7-g7H" firstAttribute="top" secondItem="FT3-xA-0yZ" secondAttribute="bottom" constant="5" id="QeT-gt-Ju6"/>
                 <constraint firstItem="Rmq-mR-S83" firstAttribute="centerX" secondItem="1et-qd-9UY" secondAttribute="centerX" id="VVz-IH-rmg"/>
+                <constraint firstItem="WMH-lr-B76" firstAttribute="top" secondItem="1et-qd-9UY" secondAttribute="top" id="WC4-uz-GSf"/>
                 <constraint firstItem="FT3-xA-0yZ" firstAttribute="leading" secondItem="Vyd-a7-g7H" secondAttribute="leading" id="XIY-F7-jNf"/>
+                <constraint firstItem="Z0F-Sl-HVI" firstAttribute="trailing" secondItem="WMH-lr-B76" secondAttribute="trailing" id="nXA-Zv-1fV"/>
                 <constraint firstItem="hNr-XF-RBU" firstAttribute="leading" secondItem="1et-qd-9UY" secondAttribute="leading" constant="16" id="tbQ-gD-qJK"/>
                 <constraint firstItem="Vyd-a7-g7H" firstAttribute="leading" secondItem="Z0F-Sl-HVI" secondAttribute="leading" constant="20" id="xMt-r7-irM"/>
             </constraints>
@@ -138,6 +146,7 @@
         </view>
     </objects>
     <resources>
+        <image name="LordCardBackGround" width="240" height="180"/>
         <image name="character.book.closed.ja" catalog="system" width="115" height="128"/>
         <image name="circle.righthalf.fill" catalog="system" width="128" height="121"/>
         <image name="flag.square.fill" catalog="system" width="128" height="114"/>
