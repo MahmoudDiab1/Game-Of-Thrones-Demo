@@ -14,4 +14,4 @@ generate a scrollable (Feed) of GOT houses.
 
 
 
-<img src="https://user-images.githubusercontent.com/64661105/196060638-fa9b7315-327a-4bdd-947f-cbf8a28dc8cb.png" alt="drawing" width="400"/> <img src="https://user-images.githubusercontent.com/64661105/196060653-b62bc5ba-9634-49fc-b4b3-4b0c27295171.png" alt="drawing" width="400"/>
+<img src="https://user-images.githubusercontent.com/64661105/196060638-fa9b7315-327a-4bdd-947f-cbf8a28dc8cb.png" alt="drawing" width="400"/> <img src="https://user-images.githubusercontent.com/64661105/196232454-e8ad5c4d-f3fd-4327-94f4-d042795101c7.png" alt="drawing" width="400"/>
