@@ -9,14 +9,16 @@ import Foundation
 import UIKit
 
 
-class HousesCoordinator: Coordinator {
-    
+struct HousesCoordinator: Coordinator {
+    // MARK: Properties -
     let navigationController: UINavigationController
     
+    // MARK: Initializers -
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
+    // MARK: Functions -
     func start() {
         let presenter = HousesPresenter( .remote(.urlSessionProvider))
         let controller = HousesViewController(coordinator: self, presenter: presenter)
@@ -24,9 +26,8 @@ class HousesCoordinator: Coordinator {
     }
 }
 
-// MARK: - Flow Methods
-extension HousesCoordinator: HousesFlow {
-    
+// MARK: Flow -
+extension HousesCoordinator: HousesFlow { 
     func coordinateToHousDetails(house: HouseTarget) {
         let houseDetailsCoordinator = HousDetailsCoordinator(navigationController, model: house)
         coordinate(to: houseDetailsCoordinator)

@@ -8,15 +8,15 @@
 import Foundation
 
 
-protocol DetailsViewWithListPresenterProtocol{
-    mutating func attach(view: DetailesWithListViewProtocol)
+protocol WeaponsListPresenterProtocol{
+    mutating func attach(view: WeaponsListViewProtocol)
     func viewLoaded()
 }
 
-struct DetailsViewWithListPresenter: DetailsViewWithListPresenterProtocol {
+struct WeaponsListPresenter: WeaponsListPresenterProtocol {
      
     // MARK: Properties -
-    private var view: DetailesWithListViewProtocol?
+    private var view: WeaponsListViewProtocol?
     private let interactor: HouseDetailsInteractor?
     private let housModel: HouseTarget?
     
@@ -29,14 +29,14 @@ struct DetailsViewWithListPresenter: DetailsViewWithListPresenterProtocol {
     
     
     // MARK: Functions -
-    mutating func attach(view: DetailesWithListViewProtocol) {
+    mutating func attach(view: WeaponsListViewProtocol) {
         self.view = view
     }
     
     func viewLoaded(){
         guard let weapons = housModel?.ancestralWeapons else {return}
         let model = AncestralWeapons(title: "\(weapons.count) Weapon", weapons: weapons)
-        view?.setupDetailsInfo(model: model)
+        view?.setupWeaponsList(model: model)
     }
 }
 

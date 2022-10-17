@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  CharacterResponseModel.swift
 //  GOT
 //
 //  Created by Mahmoud Diab on 15/10/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: Model -
 struct CharacterResponseModel: Decodable {
     let url: String?
     let name, gender, culture, born: String?
@@ -18,4 +18,5 @@ struct CharacterResponseModel: Decodable {
     let tvSeries, playedBy: [String]?
 }
  
+// MARK: Remote result -
 typealias CharacterRemoteResult = (Result<CharacterResponseModel, RemoteError>) -> ()

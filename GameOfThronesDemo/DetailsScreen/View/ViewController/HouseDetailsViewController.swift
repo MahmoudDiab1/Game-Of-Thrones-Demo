@@ -9,9 +9,9 @@ import UIKit
 
 // MARK: View -
 protocol HousesDetailsViewProtocol{
-    func displayLordCard(_ cardPresenter: HouseDetailsCardPresenterProtocol)
+    func displayLordCard(_ cardPresenter: HouseLordCardPresenterProtocol)
     func displayHouseNameCard(_ cardPresenter: HouseNamePresenterProtocol)
-    func displayListCard(_ cardPresenter: DetailsViewWithListPresenterProtocol)
+    func displayListCard(_ cardPresenter: WeaponsListPresenterProtocol)
 }
 
 class HouseDetailsViewController: UIViewController{
@@ -25,11 +25,10 @@ class HouseDetailsViewController: UIViewController{
     
     // MARK: Properties -
     private var presenter: HouseDetailsPresenterProtocol?
-    private var coordinator: HousesFlow?
     
     
     // MARK: Initializers -
-    init(presenter: HouseDetailsPresenterProtocol, coordinator: HousDetailsFlow) {
+    init(presenter: HouseDetailsPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -87,8 +86,8 @@ class HouseDetailsViewController: UIViewController{
 // MARK: Extensions -
 extension HouseDetailsViewController: HousesDetailsViewProtocol{
     
-    func displayLordCard(_ cardPresenter: HouseDetailsCardPresenterProtocol) {
-        let lordCard = HouseDetailesCard(frame: detailsView.frame, cardPresenter)
+    func displayLordCard(_ cardPresenter: HouseLordCardPresenterProtocol) {
+        let lordCard = HouseLordCard(frame: detailsView.frame, cardPresenter)
         addSubView(subView: lordCard, parent: detailsView)
     }
     
@@ -97,8 +96,8 @@ extension HouseDetailsViewController: HousesDetailsViewProtocol{
         addSubView(subView: houseNameView, parent: headerView)
     }
     
-    func displayListCard(_ cardPresenter: DetailsViewWithListPresenterProtocol) {
-        let weaponsCard = DetailesWithListCustomView(frame: detailsView.frame, presenter: cardPresenter)
+    func displayListCard(_ cardPresenter: WeaponsListPresenterProtocol) {
+        let weaponsCard = WeaponsListCustomView(frame: detailsView.frame, presenter: cardPresenter)
         addSubView(subView: weaponsCard, parent: detailsView)
     }
 }

@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailesWithListCustomView" customModule="GOT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeaponsListCustomView" customModule="GOT" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="Tes-CR-a0d" id="zCG-Ga-Jb0"/>
                 <outlet property="list" destination="JcF-dB-vqU" id="gDG-oV-IYO"/>

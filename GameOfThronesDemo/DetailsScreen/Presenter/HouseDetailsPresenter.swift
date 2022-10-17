@@ -41,13 +41,13 @@ struct HouseDetailsPresenter: HouseDetailsPresenterProtocol{
     }
     
     func weaponsBtnPressed() {
-        let weaponsPresenter = DetailsViewWithListPresenter(.remote(.urlSessionProvider), housModel)
+        let weaponsPresenter = WeaponsListPresenter(.remote(.urlSessionProvider), housModel)
         view?.displayListCard(weaponsPresenter)
     }
     
     func lordBtnPressed() {
         let remote: HouseDetailesInteractorType = .remote(.urlSessionProvider)
-        let lordCardPresenter = HouseDetailsCardPresenter(remote, housModel)
+        let lordCardPresenter = HouseLordCardPresenter(remote, housModel)
         view?.displayLordCard(lordCardPresenter)
     }
 }
