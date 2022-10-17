@@ -66,11 +66,11 @@ class HouseLordCard: UIView {
 extension HouseLordCard: HouseLordCardViewProtocol{
     
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String){
-        if let gender = lordModel?.gender {
+        if let gender = lordModel?.gender, gender != "" {
             self.gender.text = gender
         } else { genderView.isHidden = true }
         
-        if let culture = lordModel?.culture {
+        if let culture = lordModel?.culture, culture != "" {
             self.culture.text = culture
         } else { culturView.isHidden = true }
         
