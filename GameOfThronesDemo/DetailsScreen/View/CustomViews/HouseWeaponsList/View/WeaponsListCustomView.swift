@@ -11,7 +11,7 @@ import UIKit
 // MARK: View -
 protocol WeaponsListViewProtocol{
     func setupWeaponsList(model: AncestralWeapons)
-    func setupEmptyView()
+    func setupEmptyView(message: String)
 }
 
 class WeaponsListCustomView: UIView, WeaponsListViewProtocol{ 
@@ -19,8 +19,8 @@ class WeaponsListCustomView: UIView, WeaponsListViewProtocol{
     // MARK: Outlets -
     @IBOutlet weak var list: UITableView!
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var containerView: UIView!
+    
     
     // MARK: Properties -
     private var presenter: WeaponsListPresenterProtocol?
@@ -58,13 +58,13 @@ class WeaponsListCustomView: UIView, WeaponsListViewProtocol{
     
     func setupWeaponsList(model: AncestralWeapons) {
         title.text = model.title
-        weapons.append(contentsOf: model.weapons ?? [])
+        weapons = model.weapons ?? []
         list.reloadData()
     }
     
-    func setupEmptyView() {
-        let _ = self.subviews.map{$0.removeFromSuperview()}
-    }
+   func handleEmptyWeaponsList(message: String) {
+       self.setupEmptyView(message: message)
+   }
 }
 
 

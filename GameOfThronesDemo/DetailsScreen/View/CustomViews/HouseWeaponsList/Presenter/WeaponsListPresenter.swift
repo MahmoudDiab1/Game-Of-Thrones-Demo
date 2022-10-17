@@ -34,9 +34,20 @@ struct WeaponsListPresenter: WeaponsListPresenterProtocol {
     }
     
     func viewLoaded(){
-        guard let weapons = housModel?.ancestralWeapons else {return}
-        let model = AncestralWeapons(title: "\(weapons.count) Weapon", weapons: weapons)
+        
+        guard let weapons = housModel?.ancestralWeapons else {
+            view?.setupEmptyView(message: "This house has no weapons")
+            return
+        }
+        let validWeapon = weapons.filter{$0 != ""}
+        guard !validWeapon.isEmpty else {
+            view?.setupEmptyView(message: "This house has no weapons")
+            return
+        }
+        let model = AncestralWeapons(title: "\(validWeapon.count) Weapon", weapons: validWeapon)
         view?.setupWeaponsList(model: model)
     }
+    
+    
 }
 
