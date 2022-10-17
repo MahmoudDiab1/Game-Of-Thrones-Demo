@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,21 +23,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-uw-iS6">
-                    <rect key="frame" x="32" y="389.5" width="350" height="474.5"/>
+                    <rect key="frame" x="32" y="415.5" width="350" height="414.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJ3-w2-zWW" customClass="HouseLordCard" customModule="GOT" customModuleProvider="target">
-                    <rect key="frame" x="32" y="20" width="350" height="224"/>
+                    <rect key="frame" x="32" y="64" width="350" height="224"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="keh-RQ-Tuq">
-                    <rect key="frame" x="32" y="276" width="350" height="89.5"/>
+                    <rect key="frame" x="32" y="320" width="350" height="71.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyE-o6-6pu">
-                            <rect key="frame" x="0.0" y="0.0" width="165" height="89.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="165" height="71.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpH-iN-05g" userLabel="Lord">
-                                    <rect key="frame" x="5" y="8" width="155" height="73.5"/>
+                                    <rect key="frame" x="5" y="8" width="155" height="55.5"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="LORD">
@@ -55,10 +57,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLd-st-4iq">
-                            <rect key="frame" x="185" y="0.0" width="165" height="89.5"/>
+                            <rect key="frame" x="185" y="0.0" width="165" height="71.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKl-EG-FFY" userLabel="Titles">
-                                    <rect key="frame" x="5" y="8" width="155" height="73.5"/>
+                                    <rect key="frame" x="5" y="8" width="155" height="55.5"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="WEAPONS">
@@ -91,8 +93,8 @@
                 <constraint firstItem="dJ3-w2-zWW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="X8a-E5-Ca1"/>
                 <constraint firstItem="COq-zs-sS5" firstAttribute="trailing" secondItem="keh-RQ-Tuq" secondAttribute="trailing" constant="32" id="YdP-Qk-Wrq"/>
                 <constraint firstItem="keh-RQ-Tuq" firstAttribute="top" secondItem="dJ3-w2-zWW" secondAttribute="bottom" constant="32" id="bK6-oT-J2w"/>
-                <constraint firstAttribute="bottom" secondItem="YFR-uw-iS6" secondAttribute="bottom" constant="32" id="cN8-ps-6Sd"/>
-                <constraint firstItem="keh-RQ-Tuq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="gJc-ff-IaF"/>
+                <constraint firstItem="COq-zs-sS5" firstAttribute="bottom" secondItem="YFR-uw-iS6" secondAttribute="bottom" constant="32" id="cN8-ps-6Sd"/>
+                <constraint firstItem="keh-RQ-Tuq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.08" id="gJc-ff-IaF"/>
                 <constraint firstAttribute="trailing" secondItem="dJ3-w2-zWW" secondAttribute="trailing" constant="32" id="s8w-Qa-Cen"/>
                 <constraint firstItem="keh-RQ-Tuq" firstAttribute="leading" secondItem="COq-zs-sS5" secondAttribute="leading" constant="32" id="wNu-d6-X1U"/>
             </constraints>

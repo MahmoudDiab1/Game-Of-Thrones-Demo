@@ -15,6 +15,7 @@ protocol HouseLordCardViewProtocol{
 
 class HouseLordCard: UIView {
     // MARK: Outlets -
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var houseName: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var culturView: UIView!
@@ -56,8 +57,9 @@ class HouseLordCard: UIView {
     
     private func styleView() {
         containerView.addGOTStyle()
-        culturView.addGOTStyle()
-        genderView.addGOTStyle()
+        culturView.addAclerycStyle()
+        genderView.addAclerycStyle()
+        backgroundImageView.layer.cornerRadius = 12
     }
 }
 
@@ -66,11 +68,11 @@ class HouseLordCard: UIView {
 extension HouseLordCard: HouseLordCardViewProtocol{
     
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String){
-        if let gender = lordModel?.gender {
+        if let gender = lordModel?.gender, gender != "" {
             self.gender.text = gender
         } else { genderView.isHidden = true }
         
-        if let culture = lordModel?.culture {
+        if let culture = lordModel?.culture, culture != "" {
             self.culture.text = culture
         } else { culturView.isHidden = true }
         
