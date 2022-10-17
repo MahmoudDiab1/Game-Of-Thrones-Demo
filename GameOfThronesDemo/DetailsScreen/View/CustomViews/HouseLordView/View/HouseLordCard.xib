@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HouseDetailesCard" customModule="GOT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HouseLordCard" customModule="GOT" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="1et-qd-9UY" id="ETS-Vp-1H3"/>
                 <outlet property="culturView" destination="hY5-sl-4yg" id="K2H-VQ-Jbv"/>
