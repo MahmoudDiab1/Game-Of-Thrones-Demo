@@ -37,7 +37,7 @@ struct HouseDetailsPresenter: HouseDetailsPresenterProtocol{
     func viewLoaded(){
         let presenter = HouseNamePresenter(housModel)
         view?.displayHouseNameCard(presenter)
-        weaponsBtnPressed()
+        lordBtnPressed()
     }
     
     func weaponsBtnPressed() {
