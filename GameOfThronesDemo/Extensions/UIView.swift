@@ -45,5 +45,14 @@ extension UIView {
             self.bottomAnchor.constraint(equalTo: parent.bottomAnchor)])
             self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
+   func setupEmptyView(message: String) {
+       let _ = self.subviews.map{$0.removeFromSuperview()}
+       let subView = EmptyView(frame: self.frame, message)
+       subView.center = self.center
+       self.addSubview(subView)
+       subView.stickByconstraints(to: self)
+   }
 }
-
+ 

@@ -10,8 +10,7 @@ import UIKit
 // MARK: View -
 protocol HouseLordCardViewProtocol{
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String)
-    func failedToLoadCard()
-    func setupEmptyView()
+    func handleEmptyLoardCard(message: String)
 }
 
 class HouseLordCard: UIView {
@@ -65,10 +64,6 @@ class HouseLordCard: UIView {
 // MARK: Extensions -
 /// View Type
 extension HouseLordCard: HouseLordCardViewProtocol{
-    func setupEmptyView() {
-        let _ = self.subviews.map{$0.removeFromSuperview()}
-        // TODO: Handle empty view
-    }
     
     func setupLordInfo(_ lordModel: CharacterTarget?,_ houseName: String){
         if let gender = lordModel?.gender {
@@ -83,7 +78,7 @@ extension HouseLordCard: HouseLordCardViewProtocol{
         self.houseName.animate(newText: houseName, characterDelay: 0.1)
     }
     
-    func failedToLoadCard() {
-        // TODO: Handle Failure 
+    func handleEmptyLoardCard(message: String) {
+        setupEmptyView(message: message)
     }
 }
