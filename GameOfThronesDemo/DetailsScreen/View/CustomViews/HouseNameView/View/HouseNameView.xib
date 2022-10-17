@@ -14,6 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HouseNameView" customModule="GOT" customModuleProvider="target">
             <connections>
+                <outlet property="backGroundImageView" destination="mNE-Bg-AJK" id="8WY-xw-YQA"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="IQZ-LW-jL2"/>
                 <outlet property="houseName" destination="rt7-8Y-xQT" id="WFc-oj-IsO"/>
             </connections>
@@ -23,6 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="518" height="417"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HousCardBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-Bg-AJK" userLabel="backGround">
+                    <rect key="frame" x="0.0" y="0.0" width="518" height="417"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xT2-gv-xFm">
                     <rect key="frame" x="139" y="24" width="240" height="126.5"/>
                     <color key="tintColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -38,19 +43,24 @@
             <accessibility key="accessibilityConfiguration" identifier="HouseNameView"/>
             <constraints>
                 <constraint firstItem="rt7-8Y-xQT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="DEc-kq-Tjc"/>
+                <constraint firstAttribute="bottom" secondItem="mNE-Bg-AJK" secondAttribute="bottom" id="Itm-xj-FxX"/>
                 <constraint firstItem="xT2-gv-xFm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="Jd1-Ge-THH"/>
                 <constraint firstItem="xT2-gv-xFm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SnV-zm-1DT"/>
                 <constraint firstItem="xT2-gv-xFm" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.46332" id="aEW-Ml-GlN"/>
                 <constraint firstItem="rt7-8Y-xQT" firstAttribute="top" secondItem="xT2-gv-xFm" secondAttribute="bottom" constant="12" id="eXU-Os-zPd"/>
+                <constraint firstItem="mNE-Bg-AJK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ejc-50-EJm"/>
+                <constraint firstItem="mNE-Bg-AJK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ivH-Mx-WUq"/>
                 <constraint firstItem="xT2-gv-xFm" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.306954" id="uZP-TR-ckv"/>
                 <constraint firstAttribute="bottom" secondItem="rt7-8Y-xQT" secondAttribute="bottom" constant="20" id="w2g-TL-8Hq"/>
                 <constraint firstAttribute="trailing" secondItem="rt7-8Y-xQT" secondAttribute="trailing" constant="16" id="wx5-tl-45W"/>
+                <constraint firstAttribute="trailing" secondItem="mNE-Bg-AJK" secondAttribute="trailing" id="ztj-DK-2MS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-41" y="61"/>
         </view>
     </objects>
     <resources>
+        <image name="HousCardBackGround" width="400" height="260.5"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
     </resources>
 </document>
