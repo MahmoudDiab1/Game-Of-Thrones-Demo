@@ -35,7 +35,7 @@ struct HouseLordCardPresenter: HouseLordCardPresenterProtocol {
     func viewLoaded(){
         let currentLoard = housModel?.currentLord ?? ""
         guard let currentLordUrl = URL(string: currentLoard) else {
-            view?.setupEmptyView()
+            view?.handleEmptyLoardCard(message: "Lord isn't available")
             return
         }
         
@@ -44,7 +44,7 @@ struct HouseLordCardPresenter: HouseLordCardPresenterProtocol {
             case .success(let model):
                 view?.setupLordInfo(model, housModel?.name ?? "HOUSE")
             case .failure( _):
-                view?.failedToLoadCard()
+                view?.handleEmptyLoardCard(message: "Lord isn't available")
             }
         }) 
     }

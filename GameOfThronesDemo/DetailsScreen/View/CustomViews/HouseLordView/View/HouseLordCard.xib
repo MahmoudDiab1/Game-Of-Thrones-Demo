@@ -27,11 +27,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1et-qd-9UY">
-            <rect key="frame" x="0.0" y="0.0" width="562" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="562" height="473"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-mR-S83">
-                    <rect key="frame" x="28" y="274" width="506" height="40"/>
+                    <rect key="frame" x="28" y="417" width="506" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwM-Va-92g">
                             <rect key="frame" x="0.0" y="0.0" width="241" height="40"/>
@@ -97,13 +97,13 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-XF-RBU">
-                    <rect key="frame" x="16" y="64" width="530" height="194"/>
+                    <rect key="frame" x="16" y="69" width="530" height="332"/>
                     <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="20"/>
                     <color key="textColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-xA-0yZ">
-                    <rect key="frame" x="20" y="16" width="42" height="38.5"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character.book.closed.ja" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-xA-0yZ">
+                    <rect key="frame" x="20" y="16" width="42" height="40"/>
                     <color key="tintColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="2nB-1q-Op3"/>
@@ -111,7 +111,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="755" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyd-a7-g7H">
-                    <rect key="frame" x="20" y="56" width="522" height="0.0"/>
+                    <rect key="frame" x="20" y="61" width="522" height="0.0"/>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
                     <color key="textColor" red="0.88235294819999999" green="0.56078433989999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -127,19 +127,19 @@
                 <constraint firstItem="Z0F-Sl-HVI" firstAttribute="trailing" secondItem="Vyd-a7-g7H" secondAttribute="trailing" constant="20" id="IZJ-Jy-0s9"/>
                 <constraint firstItem="FT3-xA-0yZ" firstAttribute="top" secondItem="1et-qd-9UY" secondAttribute="top" constant="16" id="M9h-a7-9sG"/>
                 <constraint firstAttribute="bottom" secondItem="Rmq-mR-S83" secondAttribute="bottom" constant="16" id="PcG-fb-daw"/>
-                <constraint firstItem="Vyd-a7-g7H" firstAttribute="top" secondItem="FT3-xA-0yZ" secondAttribute="bottom" id="QeT-gt-Ju6"/>
+                <constraint firstItem="Vyd-a7-g7H" firstAttribute="top" secondItem="FT3-xA-0yZ" secondAttribute="bottom" constant="5" id="QeT-gt-Ju6"/>
                 <constraint firstItem="Rmq-mR-S83" firstAttribute="centerX" secondItem="1et-qd-9UY" secondAttribute="centerX" id="VVz-IH-rmg"/>
                 <constraint firstItem="FT3-xA-0yZ" firstAttribute="leading" secondItem="Vyd-a7-g7H" secondAttribute="leading" id="XIY-F7-jNf"/>
                 <constraint firstItem="hNr-XF-RBU" firstAttribute="leading" secondItem="1et-qd-9UY" secondAttribute="leading" constant="16" id="tbQ-gD-qJK"/>
                 <constraint firstItem="Vyd-a7-g7H" firstAttribute="leading" secondItem="Z0F-Sl-HVI" secondAttribute="leading" constant="20" id="xMt-r7-irM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-355.07246376811599" y="-65.625"/>
+            <point key="canvasLocation" x="-355.07246376811599" y="-17.745535714285712"/>
         </view>
     </objects>
     <resources>
+        <image name="character.book.closed.ja" catalog="system" width="115" height="128"/>
         <image name="circle.righthalf.fill" catalog="system" width="128" height="121"/>
-        <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="flag.square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

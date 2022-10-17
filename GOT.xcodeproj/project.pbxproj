@@ -64,6 +64,8 @@
 		0ACC2CF028F74C82005065DE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CEF28F74C82005065DE /* Error.swift */; };
 		0ACC2CF428F74DED005065DE /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC2CF328F74DED005065DE /* Remote.swift */; };
 		0AE0929228FB3DCE00FD7E7A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0929128FB3DCE00FD7E7A /* UIView.swift */; };
+		0AE8F56A28FD6E8C00FA8471 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F56928FD6E8C00FA8471 /* EmptyView.swift */; };
+		0AE8F56C28FD6EA000FA8471 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE8F56B28FD6EA000FA8471 /* EmptyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,8 @@
 		0ACC2CEF28F74C82005065DE /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0ACC2CF328F74DED005065DE /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		0AE0929128FB3DCE00FD7E7A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0AE8F56928FD6E8C00FA8471 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		0AE8F56B28FD6EA000FA8471 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 		0A31281E28FB122900A2FEC7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				0AE8F56D28FD700300FA8471 /* EmptyView */,
 				0A4866DB28FC89B8008D6C72 /* HouseNameView */,
 				0A31282528FB122900A2FEC7 /* HouseLordView */,
 				0A31281F28FB122900A2FEC7 /* HouseWeaponsList */,
@@ -562,6 +567,15 @@
 			path = HousesTableCell;
 			sourceTree = "<group>";
 		};
+		0AE8F56D28FD700300FA8471 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				0AE8F56928FD6E8C00FA8471 /* EmptyView.swift */,
+				0AE8F56B28FD6EA000FA8471 /* EmptyView.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -670,6 +684,7 @@
 				0A31283328FB122900A2FEC7 /* WeaponsListCustomView.xib in Resources */,
 				0A31284028FB125E00A2FEC7 /* Assets.xcassets in Resources */,
 				0A4866D428FC80F6008D6C72 /* HouseNameView.xib in Resources */,
+				0AE8F56C28FD6EA000FA8471 /* EmptyView.xib in Resources */,
 				0A8B265F28F8952600DA40EE /* Game of Thrones.ttf in Resources */,
 				0ACC2C8028F7313B005065DE /* LaunchScreen.storyboard in Resources */,
 				0A31283128FB122900A2FEC7 /* WeaponTableViewCell.xib in Resources */,
@@ -725,6 +740,7 @@
 				0ACC2CCF28F7464D005065DE /* SessionTypeConfig.swift in Sources */,
 				0A4866DD28FC93C0008D6C72 /* AncestralWeaponsModel.swift in Sources */,
 				0ACC2CEE28F74C04005065DE /* Interactor.swift in Sources */,
+				0AE8F56A28FD6E8C00FA8471 /* EmptyView.swift in Sources */,
 				0A4866D628FC8104008D6C72 /* HouseNameView.swift in Sources */,
 				0ACC2CE828F74BB4005065DE /* Presenter.swift in Sources */,
 				0A8B266928F8A83600DA40EE /* HouseTableViewCell.swift in Sources */,
