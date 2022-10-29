@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="518" height="417"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HousCardBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-Bg-AJK" userLabel="backGround">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HouseCardBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-Bg-AJK" userLabel="backGround">
                     <rect key="frame" x="0.0" y="0.0" width="518" height="417"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
@@ -60,7 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="HousCardBackGround" width="400" height="260.5"/>
+        <image name="HouseCardBackGround" width="400" height="260.5"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
     </resources>
 </document>
